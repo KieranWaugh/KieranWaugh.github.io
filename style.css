@@ -59,6 +59,17 @@ img {
     max-width: 100%;
     height: auto;
 }
+/* --- Global Styles --- */
+
+/* ADD THIS RULE */
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* ...rest of body style... */
+}
 
 /* --- Navbar --- */
 .navbar {
