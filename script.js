@@ -1,24 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- Theme Toggle ---
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Check for saved theme in local storage
-    if (localStorage.getItem('theme') === 'dark') {
-        htmlElement.setAttribute('data-theme', 'dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    // Icon definitions
+    const sunIcon = '<i class="fas fa-sun"></i>';
+    const moonIcon = '<i class="fas fa-moon"></i>';
+
+    /**
+     * Applies the given theme ('dark' or 'light') to the document
+     * and updates the toggle button icon.
+     */
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            htmlElement.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = sunIcon;
+        } else {
+            htmlElement.setAttribute('data-theme', 'light');
+            themeToggle.innerHTML = moonIcon;
+        }
     }
 
+    /**
+     * Toggles the theme, saves the choice to localStorage,
+     * and applies the new theme.
+     */
     themeToggle.addEventListener('click', () => {
-        if (htmlElement.getAttribute('data-theme') === 'dark') {
-            htmlElement.removeAttribute('data-theme');
-            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.removeItem('theme');
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Save the user's explicit choice
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    });
+
+    /**
+     * Checks for a saved theme in localStorage.
+     * If not found, checks system preference.
+     */
+    function setInitialTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme) {
+            // Use the saved theme
+            applyTheme(savedTheme);
+        } else if (prefersDarkScheme.matches) {
+            // Use system preference if no theme is saved
+            applyTheme('dark');
         } else {
-            htmlElement.setAttribute('data-theme', 'dark');
-            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('theme', 'dark');
+            // Default to light
+            applyTheme('light');
+        }
+    }
+
+    /**
+     * Listens for changes in the user's system theme.
+     * Only applies the change if the user has NOT made a manual choice.
+     */
+    prefersDarkScheme.addEventListener('change', (e) => {
+        // Check if the user has manually set a theme
+        const savedTheme = localStorage.getItem('theme');
+        
+        // If no theme is saved, follow the system preference
+        if (!savedTheme) {
+            applyTheme(e.matches ? 'dark' : 'light');
         }
     });
 
@@ -39,4 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Set initial theme on page load ---
+    setInitialTheme();
 });
