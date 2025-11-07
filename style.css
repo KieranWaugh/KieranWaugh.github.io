@@ -73,7 +73,7 @@ img {
 }
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* This separates left/right groups */
     align-items: center;
     height: 60px;
 }
@@ -85,6 +85,20 @@ img {
 .nav-brand:hover {
     text-decoration: none;
 }
+
+/* Groups for left and right */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between Brand and Links */
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between Desktop Toggle and Hamburger */
+}
+
+/* Desktop Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -102,16 +116,23 @@ img {
     color: var(--primary-color);
     text-decoration: none;
 }
-#theme-toggle, .nav-toggle {
+
+/* Toggles (Desktop vs Mobile) */
+.theme-toggle-btn,
+.nav-toggle { /* Common style for ALL toggles */
     background: none;
     border: none;
     color: var(--text-color);
     font-size: 1.2rem;
     cursor: pointer;
-    margin-left: 20px;
 }
+
+.theme-toggle-mobile-container {
+    display: none; /* Hide mobile toggle by default */
+}
+
 .nav-toggle {
-    display: none;
+    display: none; /* Hide hamburger by default */
 }
 
 /* --- About / Profile Section --- */
@@ -482,8 +503,9 @@ footer {
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
+    /* Hide desktop nav links */
     .nav-links {
-        display: none;
+        display: none; 
         flex-direction: column;
         width: 100%;
         position: absolute;
@@ -492,6 +514,7 @@ footer {
         background: var(--bg-color);
         border-bottom: 1px solid var(--border-color);
     }
+    /* Show mobile menu when active */
     .nav-links.active {
         display: flex;
     }
@@ -503,16 +526,25 @@ footer {
         display: block;
         padding: 15px;
     }
-    .nav-toggle {
-        display: block;
+
+    /* Toggle Swapping Logic */
+    #theme-toggle-desktop {
+        display: none; /* Hide desktop toggle on mobile */
     }
-    .profile-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .profile-info {
-        display: flex;
-        flex-direction: column;
+
+    .theme-toggle-mobile-container {
+        display: flex; /* Show mobile toggle IN THE MENU */
+        justify-content: space-between;
         align-items: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .theme-toggle-mobile-container label {
+        color: var(--secondary-color);
+        font-weight: 500;
+    }
+    
+    .nav-toggle {
+        display: block; /* Show hamburger icon on mobile */
     }
 }
