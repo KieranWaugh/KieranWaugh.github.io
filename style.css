@@ -261,6 +261,31 @@ img {
     margin-bottom: 10px;
 }
 
+/* --- New Rule for Education Timeline Icons --- */
+#education .timeline-dot {
+    /* Hide the original dot */
+    background: transparent;
+    border: none; 
+}
+
+#education .timeline-dot::before {
+    /* Add the grad cap icon */
+    content: "\f19d"; /* Font Awesome's grad cap */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900; /* Solid 'fas' icon */
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    
+    /* Positioning */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* This creates the "knockout" effect */
+    background: var(--bg-color);
+}
+
 /* --- Footer --- */
 footer {
     border-top: 1px solid var(--border-color);
