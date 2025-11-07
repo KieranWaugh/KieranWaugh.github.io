@@ -275,6 +275,209 @@ footer {
     font-weight: 500;
 }
 
+/* --- New 'View Project' Button Style --- */
+.card-links .btn-view {
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* This will be white in light mode */
+}
+.card-links .btn-view:hover {
+    background-color: #0056b3; /* A darker shade of blue */
+    border-color: #0056b3;
+}
+
+
+/* --- Project Page Styles (for project1.html) --- */
+.project-header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+}
+.project-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+/* We can re-use the .subtitle class from the main page */
+
+.project-content {
+    margin-top: 30px;
+}
+.project-content img {
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin: 10px 0 30px 0;
+    width: 100%;
+}
+.project-content p, .project-content li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.back-link {
+    display: inline-block;
+    margin-top: 40px;
+    font-weight: 500;
+}
+.back-link i {
+    margin-right: 5px;
+}
+
+/* --- View All Projects Button (on homepage) --- */
+.view-all-container {
+    text-align: center;
+    margin-top: 30px;
+}
+.btn-view-all {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.btn-view-all:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+
+/* --- All Projects Page (projects.html) --- */
+.page-header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+}
+.page-header h1 {
+    font-size: 2.8rem;
+}
+
+/* This creates the new grid layout */
+.project-grid {
+    display: grid;
+    /* This makes it responsive: it creates columns that are at 
+       least 300px wide, and fits as many as possible */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* --- New 'Cite' Button Style --- */
+.btn-cite {
+    font-style: italic;
+    color: var(--secondary-color);
+    border-color: var(--border-color);
+}
+.btn-cite:hover {
+    background: var(--card-bg);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* --- Citation Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex; /* Changed from 'none' to 'flex' when active */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.modal-content {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.modal-close:hover {
+    color: var(--text-color);
+}
+.modal-content h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+.modal-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+.modal-tab-btn {
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+.modal-tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+.modal-tab-panel {
+    display: none; /* Hidden by default */
+}
+.modal-tab-panel.active {
+    display: block; /* Shown when active */
+}
+.modal-tab-panel pre {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    white-space: pre-wrap;     /* Wraps the text */
+    word-wrap: break-word;     /* Breaks long words */
+    max-height: 300px;
+    overflow-y: auto;
+}
+.modal-tab-panel code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+}
+/* --- New 'Copy' Button in Modal --- */
+.btn-copy-cite {
+    display: block;
+    margin-left: auto; /* Aligns button to the right */
+    margin-top: 10px;
+    background: var(--card-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.btn-copy-cite:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+.btn-copy-cite:active {
+    transform: translateY(1px);
+}
+
+/* The .content-card style we already wrote will apply to the grid items! */
+
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .nav-links {
