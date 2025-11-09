@@ -48,25 +48,90 @@
     <main class="container">
         
         <section class="project-header">
-            <h1>Spatial Area Cursors</h1>
-            <p class="subtitle">Short title.</p>
+            <h1>Spatial Area Cursors - Introducing the Proxemic Cursor</h1>
+            <p class="subtitle">A user-centred research project to make spatial touchless interactions faster, easier, and more comfortable.</p>
         </section>
 
         <section class="project-content">
-            <img src="https://via.placeholder.com/900x500" alt="Project Screenshot">
+            <img src="../Uploads/Files/Images/Area cursor.gif" alt="Project Screenshot">
 
-            <h2>About the Project</h2>
-            <p>This is where you write the full, detailed description of your project. Talk about the problem you set out to solve, your methodology, and the challenges you faced.</p>
+            <h2>Overview: The Problem & Solution</h2>
+            <p>Touchless and spatial gesture interfaces, although gaining popularity, can be clumsy and fatiguing for users. Continuous actions, such as moving a slider, are especially challenging, requiring precise hand movements that can lead to errors and arm strain.</p>
+            <p><b>The Problem:</b> How can we make spatial input, especially for continuous interactions (such as sliders), more accurate, faster and less fatiguing? </p>
+            <p><b>The Solution:</b> I designed and evaluated a new interaction technique called the <strong>Proxemic Cursor</strong>, A type of area cursor. This system removes the need for precise targeting, instead allowing a user to <i>loosely</i> point towards a widget. The system intelligently targets whichever widget is closest to the cursor. The proxemic removes overbearing UI changes associated with typical area cursors, instead focusing on maintaining the precise targeting affordance of a cursor but allowing for more forgiving targeting. </p>
+            <img src="../Uploads/Files/Images/ProxemicConcept.png" alt="Project Screenshot">
 
-            <h3>Technical Details</h3>
-            <p>You can use this space to detail the technologies used (e.g., Python, React, TensorFlow) and any specific algorithms or data structures that were important.</p>
+            <h2>My Role:</h2>
+            <p>As the lead researcher and designer for this project, I was responsible for:</p>
             <ul>
-                <li>Technology 1</li>
-                <li>Technology 2</li>
-                <li>Technology 3</li>
+                <li><b>Interaction Design:</b> Proposing and defining the "proxemic cursor" concept and its interaction logic.</li>
+                <li><b>Software Prototyping:</b> Building the test software used in the studies.</li>
+                <li><b>User Research:</b> Designing and executing two formal user studies.</li>
+                <li><b>Data Analysis:</b> Statistically analysing all quantitative data and coding qualitative feedback.</li>
+                <li><b>Publication:</b> Writing and publishing the findings at an international conference.</li>
             </ul>
 
-            <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
+            <h2>The Process: A User-Centred Evaluation</h2>
+            <h3>Working with Users & User Studies</h3>
+            <p>To validate the design, I conducted two formal, within-subjects user studies with 41 participants.</p>
+            <ul>
+                <li><b>Study 1 (Sliders):</b> 21 users were asked to perform selection tasks using adjacent sliders. This was tested across different layouts that required movements from left to right and from up to down. This provided an understanding of how users traversed for continuous movements and how accurately they can control a movable widget.</li>
+            </ul>
+
+            <img src = "../Uploads/Files/Images/sliders-screenshot.png" alt="Project Screenshot">
+
+            <ul>
+                <li><b>Study 2 (Mixed Widgets):</b> Next, 20 users were tested on a more complex interface that included both a slider and buttons, in order to replicate a more realistic interaction scenario. This provided a deeper understanding of how users navigate spatial interfaces, particularly between different types of controls</li>
+            </ul>
+            <img src = "../Uploads/Files/Images/mixed-widget-screenshot.png" alt="Project Screenshot">
+
+            <p>Across both experiments, to measure usability, I collected a mix of quantitative and qualitative data:</p>
+
+            <ul>
+                <li><b>Quantitative Metrics:</b> In order to fully understand the interaction flow, I mapped out a typical user interaction (for a slider). This created a basis for evaluating performance based on quantitative metrics: Task completion time, time to acquire a target, and selection accuracy.</li>
+            </ul>
+            <img src = "../Uploads/Files/Images/proxemic-timeline.pdf" alt="Project Screenshot">
+
+            <ul>
+                <li><b>Qualitative Metrics:</b> Subjective workload was measured using the NASA-TLX survey. I also conducted semi-structured interviews to gather user preferences and opinions.</li>
+            </ul>
+
+             <h2>Outcomes</h2>
+             <p>The results were conclusive: area cursons (and the proposed proxemic cursor) are a significantly better design for touchless and spatial interactions.</p>
+
+             <ul>
+                <li><b>Faster Performance:</b> Users completed tasks faster with the proxemic cursor. This was primarily because it took them significantly less time to acquire control of the widget in the first place.</li>
+                <li><b>Reduced Workload:</b> Users reported significantly lower mental and physical workload on the NASA-TLX survey. Interview comments confirmed this, with users noting they "liked not having to aim so precisely" and could use more comfortable, lower-effort hand movements.</li>
+                <li><b>Users Preferred It:</b> The proxemic cursor, especially when paired with a "Pinch" gesture, was the overwhelming user favourite.</li>
+                <li><b>No Accuracy Loss:</b> This improved speed and comfort did not harm accuracy. Users were just as precise in their final selections.</li>
+                <li><b>Increased Comfort:</b> Users reported that the relaxed targeting offered a far more comfortable and less fatiguing experince and indicated that they would be able to use the system for longer.</li>
+                <li><b>Further insights: </b>Users indicated that due to the relaxed targeting, they would prefer the cursor move faster than a 1:1 mapping of their hand. This was later explored <b><a href="../projects.html"><i></i> here</a></b></li>
+             </ul>
+             <p></p>
+
+              <video width="320" height="240"controls>
+                <source src="../Uploads/Files/Images/area curosr video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+
+             <p></p>
+
+             
+             <p>This research was accepted and published at the 2023 ACM Symposium on Spatial User Interaction (SUI '23). </p>
+             <div class="card-links">
+                    <a href="Uploads/Papers/Waugh et al - demonstrating-proxemic-cursor.pdf" target="_blank" class="btn-link">View Paper</a>
+                    <a href="https://zenodo.org/records/8286402" target="_blank" class="btn-link">Dataset</a>
+                    <a href="https://doi.org/10.1145/3607822.3618014" target="_blank" class="btn-link">DOI</a>
+                    <a href="#" class="btn-link btn-cite">Cite</a>
+                    
+                </div>
+             
+
+
+            <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> All projects</a>
+
+           
+
         </section>
 
     </main>

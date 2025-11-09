@@ -40,6 +40,9 @@ h1, h2, h3 {
     margin-top: 0;
     color: var(--text-color);
 }
+b {
+    color: var(--primary-color);
+}
 
 h2 {
     border-bottom: 2px solid var(--border-color);
