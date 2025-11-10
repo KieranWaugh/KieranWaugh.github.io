@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push or Pinch?- Kieran Waugh</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container">
+        
+        <div class="nav-left">
+            <a href="../index.html" class="nav-brand">Kieran Waugh</a>
+            
+            <ul class="nav-links">
+                
+                <li class="theme-toggle-mobile-container">
+                    <label></label>
+                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                
+                <li><a href="../../index.html#about">Bio</a></li>
+                <li><a href="../../index.html#experience">Experience</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../index.html#publications">Publications</a></li>             
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button id="theme-toggle-desktop" class="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <button class="nav-toggle" id="nav-toggle-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+    <main class="container">
+        
+        <section class="project-header">
+            <h1>Push or Pinch? - Touchless Selection Gestures</h1>
+            <p class="subtitle">A formative study to find the best gesture for touchless control</p>
+        </section>
+
+        <section class="project-content">
+            <img src="https://via.placeholder.com/900x500" alt="Project Screenshot">
+
+            <h2>Overview: The Problem & Solution</h2>
+            <p>Touchless systems commonly use the 'AirPush' (pushing a hand/finger forward in mid-air) gesture to make selections in mid-air. While this works well for simple buttons, it is trickier to maintain this active state over continuous movements, such as slider bars or scrolling. Users struggle to keep their hand at a consistent depth, leading to errors and frustration.</p>
+            
+            <p><b>The Problem: </b>Can we find a better method for activating widgets on a mid-air interface that doesn't rely on ambiguous depth.</p>
+
+            <p><b>The Solution: </b>I designed and conducted a user study to compare the AirPush gesture with alternative gestures that do not require depth for activation. I tested both Dwell-based activation and pinch gestures to determine if removing the aspect of depth can increase targeting confidence and, in turn, improve accuracy, increase interaction speed and user satisfaction.</p>
+            <img src="Gestures-image.png" alt="Project Screenshot">
+            
+            <h2>My Role:</h2>
+            <p>As the lead researcher and designer for this project, I was responsible for:</p>
+            <ul>
+                <li><b>Interaction Design:</b> Proposing and defining the interaction gestures and their interaction logic.</li>
+                <li><b>Software Prototyping:</b> Building the test software in Java, using a Leap Motion sensor.</li>
+                <li><b>User Research:</b> Designing and executing the formal user study.</li>
+                <li><b>Data Analysis:</b> Statistically analysing all quantitative data and coding qualitative feedback.</li>
+                <li><b>Publication:</b> Writing and publishing the findings at an international conference.</li>
+            </ul>
+
+            <h2>The Process: A User-Centred Evaluation</h2>
+            <p>This project was a direct comparison to find the best-performing interaction technique. It was therefore important to test each technique across a variatey of tasks at different precision levels. This provided an understanding of how users made selections (correctly or not) acorss a a range of difficulties.</p>
+
+            <ul>
+                <li><b>Task 1 (Digit):</b> Select a number from 0-9. This was the easiest task in the set.</li>
+                <li><b>Task 2 (Alphabetic):</b> Select a letter from A-Z. This required a greater precision with smaller gaps for error. Simulates filtering a list, such as destinations on a ticket machine.</li>
+                <li><b>Task 3 (Match):</b> Match the size of a red square to a black one. This tasks requires high precision testing each interaction techniues ability to 'grab' and 'release' accurately.</li>
+            </ul>
+            <div class="image-grid">
+                <img src="DigitSelect.png" alt="Project Screenshot">
+                <img src="AlphaSelect.png" alt="Project Screenshot">
+                <img src="ShapeMove.png" alt="Project Screenshot">
+            </div>
+
+            
+            
+            <a href="../../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Designed and developed myself. Hosted on <i style="font-size:18px" class="fab">&#xf09b;</i>.</p>
+            <p>&copy; 2025 Kieran Waugh. Licensed under CC BY-NC-ND 4.0.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>

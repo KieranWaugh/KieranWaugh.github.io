@@ -74,6 +74,18 @@ body {
     /* ...rest of body style... */
 }
 
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Creates three equal columns */
+    gap: 10px;                          /* Optional: Adds 10px of space between images */
+  }
+
+  /* Optional: This makes the images fit their grid cell */
+  .image-grid img {
+    width: 100%;  /* Makes the image fill the column */
+    height: auto; /* Maintains the aspect ratio */
+  }
+
 /* --- Navbar --- */
 .navbar {
     background-color: var(--bg-color);
