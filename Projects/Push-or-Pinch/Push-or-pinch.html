@@ -53,21 +53,22 @@
         </section>
 
         <section class="project-content">
-            <img src="https://via.placeholder.com/900x500" alt="Project Screenshot">
+            <img src="teaser.png" alt="Project Screenshot">
 
             <h2>Overview: The Problem & Solution</h2>
             <p>Touchless systems commonly use the 'AirPush' (pushing a hand/finger forward in mid-air) gesture to make selections in mid-air. While this works well for simple buttons, it is trickier to maintain this active state over continuous movements, such as slider bars or scrolling. Users struggle to keep their hand at a consistent depth, leading to errors and frustration.</p>
             
             <p><b>The Problem: </b>Can we find a better method for activating widgets on a mid-air interface that doesn't rely on ambiguous depth.</p>
 
-            <p><b>The Solution: </b>I designed and conducted a user study to compare the AirPush gesture with alternative gestures that do not require depth for activation. I tested both Dwell-based activation and pinch gestures to determine if removing the aspect of depth can increase targeting confidence and, in turn, improve accuracy, increase interaction speed and user satisfaction.</p>
-            <img src="Gestures-image.png" alt="Project Screenshot">
+            <p><b>The Solution: </b>I designed and conducted a user study to compare the AirPush gesture with alternative gestures that do not require depth for activation. I tested both Dwell-based activation and pinch gestures to determine if removing the aspect of depth can increase targeting confidence and, in turn, improve accuracy, increase interaction speed and user satisfaction. I further tested a variant of pinch allowing the user to ‘pinch from anywhere’ akin to a dynamic area cursor. This allowed us to test the viability of the pinch gesture without strict tracking constraints focussing solely on the pinch dynamic.</p>
+            <center><img src="Gestures-image.png" style="width: 60%; height: auto;" alt="Project Screenshot"></center>
+            
             
             <h2>My Role:</h2>
             <p>As the lead researcher and designer for this project, I was responsible for:</p>
             <ul>
                 <li><b>Interaction Design:</b> Proposing and defining the interaction gestures and their interaction logic.</li>
-                <li><b>Software Prototyping:</b> Building the test software in Java, using a Leap Motion sensor.</li>
+                <li><b>Software Prototyping:</b> Building the test software in Java, using a Leap Motion Controller.</li>
                 <li><b>User Research:</b> Designing and executing the formal user study.</li>
                 <li><b>Data Analysis:</b> Statistically analysing all quantitative data and coding qualitative feedback.</li>
                 <li><b>Publication:</b> Writing and publishing the findings at an international conference.</li>
@@ -79,7 +80,7 @@
             <ul>
                 <li><b>Task 1 (Digit):</b> Select a number from 0-9. This was the easiest task in the set.</li>
                 <li><b>Task 2 (Alphabetic):</b> Select a letter from A-Z. This required a greater precision with smaller gaps for error. Simulates filtering a list, such as destinations on a ticket machine.</li>
-                <li><b>Task 3 (Match):</b> Match the size of a red square to a black one. This tasks requires high precision testing each interaction techniues ability to 'grab' and 'release' accurately.</li>
+                <li><b>Task 3 (Scale):</b> Match the size of a red square to a black one. This tasks requires high precision testing each interaction techniques ability to 'grab' and 'release' accurately.</li>
             </ul>
             <div class="image-grid">
                 <img src="DigitSelect.png" alt="Project Screenshot">
@@ -87,7 +88,31 @@
                 <img src="ShapeMove.png" alt="Project Screenshot">
             </div>
 
+            <p>Across both experiments, to measure usability, I collected a mix of quantitative and qualitative data:</p>
+
+            <ul>
+                <li><b>Quantitative Metrics:</b> In order to fully understand the interaction flow, I mapped out a typical user interaction (for a slider). This created a basis for evaluating performance based on quantitative metrics: Task completion time, time to acquire a target, time for adjustment and selection accuracy.</li>
+            </ul>
+            <center><img src = "Timeline.pdf" style="width: 60%; height: auto;" alt="Project Screenshot"></center>
+
+            <ul>
+                <li><b>Qualitative Metrics:</b> Subjective workload was measured using the NASA-TLX survey. I also conducted semi-structured interviews and gathered user preferences.</li>
+            </ul>
+
+            <h2>Outcomes</h2>
+            <p><b>Pinching Was Faster: </b>Pinch gestures proved to be a significantly faster "mode switch" for acquiring control of the slider handle. Both pinch techniques were faster for acquisition than the standard Air Push and Dwell methods.</p>
+            <p><b>Pinching Was Preferred: </b>Users strongly preferred the pinch gesture.</p>
+            <p><b>The UX Insight: </b>Qualitative feedback from users revealed why pinching was preferred. Pinching has two clearly defined states (open and closed) and avoids the ambiguous forward push motion, which some users found "frustrating". This gave them a greater sense of control and confidence.</p>
+            <p><b>The Potential of Area Cursors: </b>The pinch from anywhere variant of pinch was included to test a best case scenario verison of pinch (where tracking is not an issue). However, it proved to to be the most preferred, fastest and most accurate control method. This opens up the possibilty of dynamic area cursor for spatial interafces, which I further explore <b><a href="../../Projects/Spatial-area-cursors.html"><i></i> here</a></b>.</p>
             
+
+            <p>This research was accepted and published at the 2023 ACM Symposium on Spatial User Interaction (SUI '23). </p>
+             <div class="card-links">
+                    <a href="../../Uploads/Papers/Waugh et al - Push or Pinch.pdf" target="_blank" class="btn-link">View Paper</a>
+                    <a href="https://zenodo.org/records/6779013" target="_blank" class="btn-link">Dataset</a>
+                    <a href="https://doi.org/10.1145/3546155.3546702" target="_blank" class="btn-link">DOI</a>
+                    
+                </div>
             
             <a href="../../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
         </section>
