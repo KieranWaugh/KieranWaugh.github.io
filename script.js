@@ -165,12 +165,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Combined listener for modal background clicks AND copy clicks
         modal.addEventListener('click', (e) => {
-            // 1. Check for background click
+            
             if (e.target === modal) {
                 hideModal();
             }
 
-            // 2. Check for copy button click
+            
             if (e.target.classList.contains('btn-copy-cite')) {
                 const copyButton = e.target;
                 const panel = copyButton.closest('.modal-tab-panel');
@@ -198,5 +198,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    } // End of if(modal) check
+    } 
 });

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project template - Kieran Waugh</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container">
+        
+        <div class="nav-left">
+            <a href="../../index.html" class="nav-brand">Kieran Waugh</a>
+            
+            <ul class="nav-links">
+                
+                <li class="theme-toggle-mobile-container">
+                    <label></label>
+                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                
+                <li><a href="../../index.html#about">Bio</a></li>
+                <li><a href="../../index.html#experience">Experience</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../index.html#publications">Publications</a></li>             
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button id="theme-toggle-desktop" class="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <button class="nav-toggle" id="nav-toggle-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+    <main class="container">
+        
+        <section class="project-header">
+            <h1>Investigating High-Precision Input for XR Styluses (MX Ink)</h1>
+            <p class="subtitle">A two-part investigation into the accuracy of 3D stylus selection (the Heisenberg Effect) and the design of new gestures (Double-Tap).</p>
+        </section>
+
+        <section class="project-content">
+            <img src="mx-ink.jpg" alt="Project Screenshot">
+
+            <h2>Overview: The Problem & Solution</h2>
+            <p>The Logitech MX Ink is a 6DoF stylus designed for XR. It promotes fine tuned drawing and spatial targeting more accurately. My summer internship in 2024 focused on testing these attributes and quantifying how much more accurate it is.</p>
+            <h3>The Problem (A Two-Part Challenge):</h3>
+            <ol> 
+                <li><b>Is a stylus really more precise? </b>A phenomena in spatial input is the Heisenberg effect of spatial interaction - the unintended displacement of the device during button presses due to the force pressing down. This effect can ruin a perfectly aimed selection. <strong>Is a stylus less affected by this than a standard controller?</strong></li>
+                <li><b>How do we add new interactions? </b>The MX Ink supports double tapping as a secondary action, which is common for stylus input. However, what is uncommon is the ability to place the stylus in different surfaces and hold it in different grip styles in 3D space. Therefore we needed to understand <strong>how these grip styles and positioning affect the ability to perform the secondary double tap action</strong>. </li>
+            </ol>
+
+            <p><b>The Solution: </b>I ran a two-part research program with 25 total participants to build a complete profile of stylus interaction.</p>
+            <ul>
+                <li><b>Part 1: Quantify Precision. </b>A comparative user study to measure the Heisenberg Effect on a stylus vs. a standard controller.</li>
+                <li><b>Part 2: Double Tap. </b>User study to determine the precise detection timings (interval and duration) for a reliable double-tap gesture.</li>
+            </ul>
+
+            <center><img src="heisenberg.png" style="width: 75%; height: auto;" alt="Project Screenshot"></center>
+
+            <h2>My Role:</h2>
+            <p>I was responsible for the end-to-end design and execution of two distinct user studies across 25 participants:</p>
+            <li><b>Interaction Design:</b> Defining the comparative tasks, selection mechanics, and the core metrics for the double-tap gesture.</li>
+            <li><b>Software Prototyping:</b> Building the VR experiment environments to run all three studies.</li>
+            <li><b>User Research:</b> Designing the methodology, recruiting, and running participants.</li>
+            <li><b>Data Analysis:</b> Statistically analysing performance, displacement, error rates, and gesture timings to formulate concrete, data-driven design guidelines.</li>
+
+            <h2>The Process: A User-Centred Evaluation</h2>
+            The project aimed to provide a greater understanding of the interaction merchanics of the MX Ink. I first started by understanding an existing problem (precision) and then use that knowledge to design a new interaction (double-tap).
+
+            <ul>
+                <li><b>Quantify Precision (The Heisenberg Effect): </b>First, I ran a comparitive study to compare the Logitech MX Ink stylus against a Meta Quest Touch Plus controller. To isolate the Heisenberg Effect, users performed three tasks:</li>
+                <ol>
+                    <li><strong>Ballistic Task: </strong>A standard, rapid-fire pointing task where users moved quickly to select highlighted targets.</li>
+                    <li><strong>Pure (Dwell) Task: </strong>A task where users had to hold the cursor perfectly still before clicking. This isolated the physical jolt of the button press from any movement error.</li>
+                    <li><strong>Draw Task: </strong>A picture tracing task.</li>
+                </ol>
+            </ul>
+            
+            <div class="image-grid">
+                <img src="Fitts.png" alt="Project Screenshot">
+                <img src="fitts-small.png" alt="Project Screenshot">
+                <img src="Draw.png" alt="Project Screenshot">
+            </div>
+            
+            <ul>
+                <li><b>Double Tap: </b>Next, I ran a pilot study to gather the foundational data to build a reliable double-tap gesture. Participants performed 120 double-taps across four conditions, allowing us to measure the exact timings.</li>
+            </ul>
+            <p><b>The test conditions:</b></p>
+            <ol>
+                <li><Strong>Finger: </Strong>Tapping with the Index Finger vs. the Thumb.</li>
+                <li><strong>Location: </strong>Tapping in Mid-Air vs. Tapping on a Surface.</li>
+            </ol>
+
+            <h2>Outcomes And Implications For UX</h2>
+            <p>This two-part study delivered clear, actionable guidelines for designing for XR stylus interactions.</p>
+
+            <ul> 
+                <li><b>The Stylus is Quantifiably More Precise. </b>The stylus consistently outperformed the controller. It was less affected by the Heisenberg Effect, resulting in significantly fewer selection errors and less physical displacement.</li>
+                <li><b>The Most Critical Factor is the Finger, Not Just the Device.</b></li>
+                <ul>
+                    <li>In the precision study, thumb-based clicks caused significantly more device movement and errors than index-finger clicks.</li>
+                    <li>In the double-tap study, the thumb and index finger produced completely different timing profiles. Thumbs had a shorter interval but longer tap duration.</li>
+                </ul>
+                <li><b>Overall Conclusion & Design Recommendations: </b>A stylus is a superior tool for precision, but its grip design is key. To be effective, a double-tap gesture detector must use different timing models based on whether the user is tapping with their thumb or index finger. A one-size-fits-all model can fail for one of these groups and lead to a frustrating user experience.</li>
+            </ul>
+
+
+            <a href="../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Designed and developed myself. Hosted on <i style="font-size:18px" class="fab">&#xf09b;</i>.</p>
+            <p>&copy; 2025 Kieran Waugh. Licensed under CC BY-NC-ND 4.0.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
