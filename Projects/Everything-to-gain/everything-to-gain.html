@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything to Gain - Kieran Waugh</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container">
+        
+        <div class="nav-left">
+            <a href="../../index.html" class="nav-brand">Kieran Waugh</a>
+            
+            <ul class="nav-links">
+                
+                <li class="theme-toggle-mobile-container">
+                    <label></label>
+                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                
+                <li><a href="../../index.html#about">Bio</a></li>
+                <li><a href="../../index.html#experience">Experience</a></li>
+                <li><a href="../../projects.html">Projects</a></li>
+                <li><a href="../../index.html#publications">Publications</a></li>             
+                <li><a href="../../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button id="theme-toggle-desktop" class="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <button class="nav-toggle" id="nav-toggle-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+    <main class="container">
+        
+        <section class="project-header">
+            <h1>Everything to Gain</h1>
+            <p class="subtitle">Combining Area Cursors with Control-Display Gain for fast, accurate, and low-effort touchless input.</p>
+        </section>
+
+        <section class="project-content">
+            <img src="teaser.pdf" alt="Project Screenshot">
+
+            <h2>Overview: The Problem & Solution</h2>
+            <p>My previous <a href="../Spatial-area-cursors.html"><i></i> research</a> proved that area cursors are highly effective for mid-air spatial input, allowing users to navigate effectively without the need for high accuracy.</p>
+            <p>While area cursors reduce overall hand movement, larger displays still require substantial physical motion. How, then, can the advantages of spatial area cursors be extended to large-display interactions, and how do they perform in dense or cluttered interfaces, such as keyboards or menus, where their benefits may be reduced?</p>
+            <p>The standard solution for large screens is to increase the Control-Display Gain, making the cursor move further for less hand movement but at a cost of instability and precision.</p>
+            <p>I hypothesized that these two concepts had a mutually beneficial relationship. The forgiving nature of an area cursor would compensate for the imprecision of high gain, creating an interaction that is fast, accurate, and low-effort, even on large, dense displays.</p>
+            
+            <h2>My Role:</h2>
+            <p>As the lead researcher, I was responsible for the entire project lifecycle:</p>
+            <ul>
+                <li><b>Interaction Design:</b> Defining the relationship between proxemic cursors and control display gain.</li>
+                <li><b>Software Prototyping:</b> Building the experiment software using an Ultraleap Stereo IR 170 sensor in Unity game engine.</li>
+                <li><b>User Research:</b> Designing, running, and analysing two separate user studies with a total of 38 participants.</li>
+                <li><b>Data Analysis:</b> Statistically analysing all quantitative data and coding qualitative feedback to derive design recommendations.</li>
+                <li><b>Publication:</b> Writing and publishing the findings at an international conference.</li>
+            </ul>
+
+            <h2>The Process: A Two-Part User Study</h2>
+            <p>I ran two comprehensive experiments to understand the complex relationship between display size, cursor gain, and target density.</p>
+            <ul>
+                <li><b>Study 1 (Display Size): </b>Four levels of control display gain (1.0 to 3.5) across four different simulated display sizes (27" to 55"). This helped find the <i>sweet spot</i> for gain on different screens.</li>
+                <li><b>Study 2 (Target Density): </b>The same CDG levels on two display sizes (27" and 55") but added four levels of target density, from sparse to very cluttered. This simulated real-world UIs, like a simple menu vs. a full keyboard.
+            </ul>
+
+            <p>Users were tested on a variety of tasks and layouts.</p>
+            <ul>
+                <li><b>Slider Task: </b>A continuous precision task, used in Experiment 1 to see how gain affected fine motor control.</li>
+                <li><b>Button Selection Task: </b>A standard multi-directional pointing task</li>
+                <li><b>Density (Study 2): </b>Critical for testing how the cursor performed when distractor targets were present.</li>
+            </ul>
+
+            <div class="image-grid">
+                <img src="Slider Layout.pdf" alt="Project Screenshot">
+                <img src="Button Layout 1.pdf" alt="Project Screenshot">
+                <img src="density layout.pdf" alt="Project Screenshot">
+            </div>
+
+            <h2>Outcomes - Implications For UX</h2>
+            <p>It was clear that the forgiving nature of the area cursors allowed users to take advantage of a higher control display gain, moving towards targets faster and with less arm movement. This project provides clear, actionable principles for UX designers creating spatial and touchless interfaces:</p>
+
+            <ol>
+                <li><b>The UX Must Be Context-Aware: </b>The most critical finding is that a one-size-fits-all interaction model for cursor gain will fail. A setting that feels great on a large kiosk display will not work on a desktop monitor. The user experience must be adapted to the physical size of the display. A hard-coded, single-gain value is a recipe for user frustration.</li>
+                <li><b>On Smaller Displays, Prioritise Precision and Control: </b>For desktop-sized displays (~27 inches), the user's primary expectation is precision. A lower, more conservative gain (~1.0 - 1.5) is best. Targets are physically closer, so more precise 1:1 control feels better. </li>
+                <li><b>On Larger Displays, Increase Gain To Combat Fatigue</b> For larger screens, the user wants to feel comfortable. Combining the area cursor with a higher gain value (~2 - 2.5) allows for fast interaction without sacrificing accuracy.</li>
+            </ol>
+
+            <h3>Summary Video</h3>
+            <video width="320" height="240"controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+
+            <p>This research was accepted and published at the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25). </p>
+             <div class="card-links">
+                    <a href="../../Uploads/Papers/Waugh et al - Everything to Gain.pdf" target="_blank" class="btn-link">View Paper</a>
+                    <a href="https://zenodo.org/records/14850400" target="_blank" class="btn-link">Dataset</a>
+                    <a href="https://doi.org/10.1145/3706598.3714021" target="_blank" class="btn-link">DOI</a>
+                    
+                </div>
+
+            <a href="../../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Designed and developed myself. Hosted on <i style="font-size:18px" class="fab">&#xf09b;</i>.</p>
+            <p>&copy; 2025 Kieran Waugh. Licensed under CC BY-NC-ND 4.0.</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
