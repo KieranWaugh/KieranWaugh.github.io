@@ -6,12 +6,11 @@ citations: true
 {%- comment -%}
   Homepage. Most content comes from:
     _config.yml            name, links, CV, contact details
-    _data/interests.yml    interests list
+    _data/home.yml         About Me, interests, contact intro
     _data/experience.yml   experience timeline
     _data/education.yml    education timeline
     _data/publications.yml papers marked `featured: true`
     Projects/**            project pages marked `featured: true`
-  The "About Me" paragraph below is edited directly here.
 {%- endcomment -%}
 {%- assign a = site.author -%}
 
@@ -35,10 +34,10 @@ citations: true
 
             <div class="bio-content">
                 <h2>About Me</h2>
-                <p>Research scientist and UX researcher with a PhD in Human-Computer Interaction, working across research and practice on how people interact with emerging hardware and software. I own studies end-to-end from framing the question, recruitment and analysis, to the recommendations that follow. I use whichever mix of experiments, behavioural data, interviews, and field observation the question actually needs, so findings explain not just what people do but why. I enjoy seeking open-ended problems where the method has to be built before the question can be answered. My work spans academic and commercial research, and has shipped into released products and developer standards.</p>
+                <p>{{ site.data.home.bio }}</p>
                 <h3>Interests</h3>
                 <ul class="interests-list">
-                    {% for interest in site.data.interests %}<li>{{ interest }}</li>
+                    {% for interest in site.data.home.interests %}<li>{{ interest }}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -88,7 +87,7 @@ citations: true
         <section id="contact" class="content-section">
             <h2>Get in Touch</h2>
             <div class="content-card">
-                <p>I'm always open to discussing new research, projects, or potential jobs and collaborations. Feel free to reach out via email or connect with me on social media.</p>
+                <p>{{ site.data.home.contact_intro }}</p>
 
                 <ul class="contact-list">
                     <li>

@@ -1,12 +1,13 @@
 ---
 # ------------------------------------------------------------------
 #  NEW PROJECT TEMPLATE
-#  1. Make a folder:   Projects/My-Project/
-#  2. Copy this file:  Projects/My-Project/my-project.md
-#     (it will be published as /Projects/My-Project/my-project.html)
-#  3. Put the project's images in the same folder and reference
-#     them by file name, e.g. ![Alt text](teaser.png)
-#  4. Fill in the fields below. Delete any you don't need.
+#  Easiest: use Pages CMS → Projects → "Add an entry" (it uses these
+#  same fields). To do it by hand instead:
+#  1. Copy this file to:  Projects/my-project.md
+#     (it will be published as /Projects/my-project.html)
+#  2. Put images in Uploads/Images/ and reference them like
+#     ![Alt text](/Uploads/Images/my-image.png)
+#  3. Fill in the fields below. Delete any you don't need.
 #  The page layout, nav bar, footer and "Back to all projects"
 #  link are added automatically.
 # ------------------------------------------------------------------
@@ -26,7 +27,7 @@ dataset: "https://zenodo.org/records/0000000"
 doi: "10.1145/0000000.0000000"
 ---
 
-![Project teaser](teaser.png)
+![Project teaser](/Uploads/Images/teaser.png)
 
 ## Overview: The Problem & Solution
 
@@ -49,9 +50,9 @@ Write in Markdown, or paste in HTML where you need more control
 (for example the three-image grid used on other project pages):
 
 <div class="image-grid">
-    <img src="image-1.png" alt="Screenshot">
-    <img src="image-2.png" alt="Screenshot">
-    <img src="image-3.png" alt="Screenshot">
+    <img src="/Uploads/Images/image-1.png" alt="Screenshot">
+    <img src="/Uploads/Images/image-2.png" alt="Screenshot">
+    <img src="/Uploads/Images/image-3.png" alt="Screenshot">
 </div>
 
 ## Outcomes

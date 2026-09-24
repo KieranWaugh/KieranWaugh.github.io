@@ -1,0 +1,160 @@
+# Pages CMS configuration — https://pagescms.org/docs/configuration/
+# Defines the editing forms shown at app.pagescms.org for this repo.
+
+media:
+  - name: images
+    label: Images
+    input: Uploads/Images
+    output: /Uploads/Images
+    categories: [image, video]
+  - name: papers
+    label: Papers
+    input: Uploads/Papers
+    output: /Uploads/Papers
+    categories: [document]
+  - name: files
+    label: Files (CV etc.)
+    input: Uploads/Files
+    output: /Uploads/Files
+
+settings:
+  content:
+    # Keep any keys in a file that aren't listed as fields below
+    merge: true
+
+content:
+  - name: home
+    label: Homepage
+    type: file
+    path: _data/home.yml
+    fields:
+      - { name: bio, label: About Me, type: text }
+      - { name: interests, label: Interests, type: string, list: true }
+      - { name: contact_intro, label: Get in Touch intro, type: text }
+
+  - name: publications
+    label: Publications
+    type: file
+    path: _data/publications.yml
+    list: true
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: authors, label: Authors, type: string, list: true, description: Your own name is bolded automatically. }
+      - { name: venue, label: Venue, type: string, description: "e.g. In CHI Conference on Human Factors in Computing Systems (CHI '25)" }
+      - { name: year, label: Year, type: number, required: true }
+      - { name: pdf, label: PDF, type: file, options: { media: papers } }
+      - { name: doi, label: DOI, type: string }
+      - { name: featured, label: Feature on homepage, type: boolean, default: false }
+      - { name: cite, label: Plain-text citation, type: text }
+      - { name: bibtex, label: BibTeX, type: code }
+
+  - name: projects
+    label: Projects
+    description: New project pages, written in the rich-text editor.
+    type: collection
+    path: Projects
+    subfolders: false
+    filename: "{fields.short_title}.md"
+    view:
+      fields: [title, featured, order]
+      primary: title
+      sort: [order, title]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: short_title, label: Short title (browser tab and file name), type: string, required: true }
+      - { name: subtitle, label: Subtitle, type: text, description: Shown under the title and on the project card. }
+      - { name: summary, label: Card summary (optional), type: text }
+      - { name: listed, label: Show on All Projects page, type: boolean, default: true }
+      - { name: featured, label: Feature on homepage, type: boolean, default: false }
+      - { name: order, label: Order, type: number, description: Lower numbers appear first. }
+      - { name: published_in, label: Published in, type: string }
+      - { name: paper, label: Paper PDF, type: file, options: { media: papers } }
+      - { name: dataset, label: Dataset URL, type: string }
+      - { name: doi, label: DOI, type: string }
+      - { name: body, label: Page content, type: rich-text, options: { format: markdown, media: images } }
+
+  - name: html_projects
+    label: Projects (original HTML pages)
+    description: The original project pages. Settings are a form; the page content is HTML.
+    type: collection
+    path: Projects
+    filename: "{fields.short_title}.html"
+    exclude: [HeisenbergEffectold.html]
+    operations: { create: false, delete: false, rename: false }
+    view:
+      fields: [title, featured, order]
+      primary: title
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: short_title, label: Short title (browser tab), type: string }
+      - { name: subtitle, label: Subtitle, type: text }
+      - { name: summary, label: Card summary (optional), type: text }
+      - { name: listed, label: Show on All Projects page, type: boolean }
+      - { name: featured, label: Feature on homepage, type: boolean }
+      - { name: order, label: Order, type: number }
+      - { name: analytics, label: Enable GoatCounter analytics, type: boolean }
+      - name: header_button
+        label: Header button (optional)
+        type: object
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: url, label: URL, type: string }
+      - { name: published_in, label: Published in, type: string }
+      - { name: paper, label: Paper PDF, type: file, options: { media: papers } }
+      - { name: dataset, label: Dataset URL, type: string }
+      - { name: doi, label: DOI, type: string }
+      - { name: body, label: Page content (HTML), type: code, options: { format: html } }
+
+  - name: experience
+    label: Experience
+    type: file
+    path: _data/experience.yml
+    list: true
+    fields:
+      - { name: title, label: Role, type: string, required: true }
+      - { name: where, label: Organisation, type: string }
+      - { name: dates, label: Dates, type: string, description: "e.g. June 2025 - Present" }
+      - { name: description, label: Description, type: text }
+
+  - name: education
+    label: Education
+    type: file
+    path: _data/education.yml
+    list: true
+    fields:
+      - { name: title, label: Degree, type: string, required: true }
+      - { name: where, label: Institution, type: string }
+      - { name: dates, label: Dates, type: string }
+      - { name: description, label: Description, type: text }
+
+  - name: site
+    label: Site settings
+    description: Name, links, CV and navigation. Other settings in the file are kept as they are.
+    type: file
+    path: _config.yml
+    fields:
+      - name: author
+        label: Profile
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: affiliation, label: Affiliation, type: string }
+          - { name: location, label: Location, type: string }
+          - { name: photo, label: Profile photo, type: image, options: { media: images } }
+          - { name: cv, label: CV (PDF), type: file, options: { media: files } }
+          - { name: email, label: Email, type: string }
+          - { name: email_display, label: Email as displayed, type: string }
+          - { name: github, label: GitHub URL, type: string }
+          - { name: linkedin, label: LinkedIn URL, type: string }
+          - { name: linkedin_display, label: LinkedIn as displayed, type: string }
+          - { name: scholar, label: Google Scholar URL, type: string }
+      - name: nav
+        label: Navigation
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Label, type: string }
+          - { name: url, label: Link, type: string }
+      - { name: analytics_everywhere, label: GoatCounter analytics on every page, type: boolean }

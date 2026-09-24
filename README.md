@@ -3,14 +3,25 @@
 Personal website, built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages.
 GitHub builds the site automatically whenever `main` is updated. You don't need a build step.
 
+## Editing in the browser (Pages CMS)
+
+Go to https://app.pagescms.org, sign in with GitHub and open this repository.
+Every save is a commit, and GitHub Pages republishes the site a minute or two later.
+
+- **Homepage, Publications, Experience, Education, Site settings:** forms
+- **Projects:** new project pages, written in a rich-text editor
+- **Projects (original HTML pages):** the existing project pages; settings are a form, content is HTML
+- **Media:** upload images (`Uploads/Images`), papers (`Uploads/Papers`) and files such as the CV (`Uploads/Files`)
+
+The CMS is configured in `.pages.yml`. Note: saving a data file from the CMS rewrites it, so comments in that file are removed.
+
 ## Where things live
 
 | To change…                                   | Edit                                   |
 |----------------------------------------------|----------------------------------------|
 | Name, subtitle, email, social links, CV path | `_config.yml`                          |
 | Navigation bar items                         | `_config.yml` → `nav`                  |
-| About Me paragraph                           | `index.html`                           |
-| Interests                                    | `_data/interests.yml`                  |
+| About Me, interests, contact intro           | `_data/home.yml`                       |
 | Experience / Education timelines             | `_data/experience.yml`, `_data/education.yml` |
 | Publications (both pages)                    | `_data/publications.yml`               |
 | Project pages                                | `Projects/<Name>/…` (front matter at the top of each file) |
@@ -23,7 +34,7 @@ GitHub builds the site automatically whenever `main` is updated. You don't need 
 **Add a publication:** copy an entry in `_data/publications.yml`, fill it in, and put the PDF in `Uploads/Papers/`.
 Set `featured: true` to show it on the homepage too. The publications page groups entries by `year` automatically.
 
-**Add a project:** follow the steps at the top of `_templates/project-template.md`.
+**Add a project:** in Pages CMS use Projects → Add an entry, or by hand follow the steps at the top of `_templates/project-template.md`.
 Set `featured: true` to show it on the homepage, and use `order` to position it.
 
 **Update the CV:** replace `Uploads/Files/Kieran_Waugh_CV.pdf` (same file name).
