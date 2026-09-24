@@ -46,7 +46,7 @@ content:
       - { name: doi, label: DOI, type: string }
       - { name: featured, label: Feature on homepage, type: boolean, default: false }
       - { name: cite, label: Plain-text citation, type: text }
-      - { name: bibtex, label: BibTeX, type: code }
+      - { name: bibtex, label: BibTeX, type: code, options: { format: text } }
 
   - name: projects
     label: Projects
