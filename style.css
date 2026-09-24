@@ -44,7 +44,8 @@ h1, h2, h3 {
     margin-top: 0;
     color: var(--text-color);
 }
-b {
+b,
+.project-content strong {
     color: var(--primary-color);
 }
 
@@ -637,4 +638,13 @@ footer {
     border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.2s ease;
+}
+
+/* Project page image shown at 60% width, centred (image section with size: medium) */
+.project-content img.img-medium {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }

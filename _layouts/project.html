@@ -10,6 +10,24 @@ layout: default
         </section>
 
         <section class="project-content">
+            {% for section in page.sections %}
+            {% case section.type %}
+            {% when "text" %}
+{{ section.body | markdownify }}
+            {% when "image" %}
+            <img src="{{ section.src | relative_url }}" alt="{{ section.alt | escape }}"{% if section.size == "medium" %} class="img-medium"{% endif %}>
+            {% when "gallery" %}
+            <div class="image-grid" style="grid-template-columns: repeat({{ section.images.size }}, 1fr);">
+                {% for image in section.images %}<img src="{{ image.src | relative_url }}" alt="{{ image.alt | escape }}">
+                {% endfor %}
+            </div>
+            {% when "video" %}
+            <video width="320" height="240" controls>
+                <source src="{{ section.src | relative_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% endcase %}
+            {% endfor %}
 {{ content }}
             {% if page.published_in or page.paper or page.dataset or page.doi %}
             {% if page.published_in %}<p>This research was accepted and published at {{ page.published_in }}.</p>{% endif %}

@@ -42,6 +42,10 @@ footer:
 goatcounter: kieranwaugh
 analytics_everywhere: false
 
+# Keep quotes and apostrophes exactly as typed (no automatic curly quotes)
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
 # Defaults so project pages don't need to repeat the layout
 defaults:
   - scope:

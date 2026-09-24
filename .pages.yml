@@ -2,6 +2,11 @@
 # Defines the editing forms shown at app.pagescms.org for this repo.
 
 media:
+  - name: project_media
+    label: Project images & videos
+    input: Projects
+    output: /Projects
+    categories: [image, video]
   - name: images
     label: Images
     input: Uploads/Images
@@ -50,13 +55,12 @@ content:
 
   - name: projects
     label: Projects
-    description: New project pages, written in the rich-text editor.
+    description: Project pages. Build each page from sections (text, image, image grid, video).
     type: collection
     path: Projects
-    subfolders: false
     filename: "{fields.short_title}.md"
     view:
-      fields: [title, featured, order]
+      fields: [title, featured, listed, order]
       primary: title
       sort: [order, title]
       default: { sort: order, order: asc }
@@ -64,47 +68,59 @@ content:
       - { name: title, label: Title, type: string, required: true }
       - { name: short_title, label: Short title (browser tab and file name), type: string, required: true }
       - { name: subtitle, label: Subtitle, type: text, description: Shown under the title and on the project card. }
-      - { name: summary, label: Card summary (optional), type: text }
+      - { name: summary, label: Card summary (optional), type: text, description: Overrides the subtitle on project cards. }
       - { name: listed, label: Show on All Projects page, type: boolean, default: true }
       - { name: featured, label: Feature on homepage, type: boolean, default: false }
       - { name: order, label: Order, type: number, description: Lower numbers appear first. }
-      - { name: published_in, label: Published in, type: string }
-      - { name: paper, label: Paper PDF, type: file, options: { media: papers } }
-      - { name: dataset, label: Dataset URL, type: string }
-      - { name: doi, label: DOI, type: string }
-      - { name: body, label: Page content, type: rich-text, options: { format: markdown, media: images } }
-
-  - name: html_projects
-    label: Projects (original HTML pages)
-    description: The original project pages. Settings are a form; the page content is HTML.
-    type: collection
-    path: Projects
-    filename: "{fields.short_title}.html"
-    exclude: [HeisenbergEffectold.html]
-    operations: { create: false, delete: false, rename: false }
-    view:
-      fields: [title, featured, order]
-      primary: title
-    fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: short_title, label: Short title (browser tab), type: string }
-      - { name: subtitle, label: Subtitle, type: text }
-      - { name: summary, label: Card summary (optional), type: text }
-      - { name: listed, label: Show on All Projects page, type: boolean }
-      - { name: featured, label: Feature on homepage, type: boolean }
-      - { name: order, label: Order, type: number }
-      - { name: analytics, label: Enable GoatCounter analytics, type: boolean }
+      - name: sections
+        label: Page sections
+        description: Shown top to bottom. Drag to reorder.
+        type: block
+        blockKey: type
+        list: true
+        blocks:
+          - name: text
+            label: Text
+            fields:
+              - { name: body, label: Text, type: rich-text, options: { format: markdown, media: project_media } }
+          - name: image
+            label: Image
+            fields:
+              - { name: src, label: Image, type: image, options: { media: project_media } }
+              - { name: alt, label: Description (alt text), type: string }
+              - name: size
+                label: Size
+                type: select
+                default: full
+                options:
+                  values:
+                    - { value: full, label: Full width }
+                    - { value: medium, label: Medium (centred) }
+          - name: gallery
+            label: Image grid
+            fields:
+              - name: images
+                label: Images (side by side)
+                type: object
+                list: { min: 2, max: 4, collapsible: false }
+                fields:
+                  - { name: src, label: Image, type: image, options: { media: project_media } }
+                  - { name: alt, label: Description (alt text), type: string }
+          - name: video
+            label: Video
+            fields:
+              - { name: src, label: Video (MP4), type: file, options: { media: project_media } }
       - name: header_button
         label: Header button (optional)
         type: object
         fields:
           - { name: label, label: Label, type: string }
           - { name: url, label: URL, type: string }
-      - { name: published_in, label: Published in, type: string }
+      - { name: published_in, label: Published in, type: string, description: "e.g. the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25)" }
       - { name: paper, label: Paper PDF, type: file, options: { media: papers } }
       - { name: dataset, label: Dataset URL, type: string }
-      - { name: doi, label: DOI, type: string }
-      - { name: body, label: Page content (HTML), type: code, options: { format: html } }
+      - { name: doi, label: DOI, type: string, description: "Just the DOI, e.g. 10.1145/3706598.3714021" }
+      - { name: analytics, label: Enable GoatCounter analytics on this page, type: boolean, default: false }
 
   - name: experience
     label: Experience

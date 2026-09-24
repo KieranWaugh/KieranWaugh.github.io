@@ -9,9 +9,8 @@ Go to https://app.pagescms.org, sign in with GitHub and open this repository.
 Every save is a commit, and GitHub Pages republishes the site a minute or two later.
 
 - **Homepage, Publications, Experience, Education, Site settings:** forms
-- **Projects:** new project pages, written in a rich-text editor
-- **Projects (original HTML pages):** the existing project pages; settings are a form, content is HTML
-- **Media:** upload images (`Uploads/Images`), papers (`Uploads/Papers`) and files such as the CV (`Uploads/Files`)
+- **Projects:** every project page. Each page is built from sections (text, image, image grid, video) that you add and drag to reorder
+- **Media:** upload project images/videos (`Projects/`), other images (`Uploads/Images`), papers (`Uploads/Papers`) and files such as the CV (`Uploads/Files`)
 
 The CMS is configured in `.pages.yml`. Note: saving a data file from the CMS rewrites it, so comments in that file are removed.
 
@@ -24,9 +23,9 @@ The CMS is configured in `.pages.yml`. Note: saving a data file from the CMS rew
 | About Me, interests, contact intro           | `_data/home.yml`                       |
 | Experience / Education timelines             | `_data/experience.yml`, `_data/education.yml` |
 | Publications (both pages)                    | `_data/publications.yml`               |
-| Project pages                                | `Projects/<Name>/…` (front matter at the top of each file) |
+| Project pages                                | `Projects/**/*.md` (settings and `sections` at the top of each file) |
 | Header / footer / cite pop-up                | `_includes/`                           |
-| Page structure                               | `_layouts/default.html`, `_layouts/project.html` |
+| Page structure / how sections look           | `_layouts/default.html`, `_layouts/project.html` |
 | Styles / scripts                             | `style.css`, `script.js`               |
 
 ## Common tasks
