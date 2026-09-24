@@ -32,9 +32,12 @@ Set `featured: true` to show it on the homepage, and use `order` to position it.
 
 One-time setup (macOS):
 
+GitHub Pages builds with Ruby 3.3, so install that version (the newest Ruby, 4.x, is too new for the Jekyll version GitHub Pages uses):
+
 ```bash
-brew install ruby
-echo 'export PATH="$(brew --prefix ruby)/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
+brew install ruby@3.3
+echo 'export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
+ruby -v            # should say 3.3.x
 gem install bundler
 bundle install
 ```

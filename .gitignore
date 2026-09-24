@@ -10,3 +10,6 @@ _site/
 # Ruby / Bundler
 .bundle/
 vendor/
+
+# Local dependency lock (machine-specific)
+Gemfile.lock
