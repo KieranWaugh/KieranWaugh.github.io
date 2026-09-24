@@ -1,0 +1,8 @@
+{%- assign p = include.project -%}
+<article class="content-card">
+    <h3>{{ p.card_title | default: p.title }}</h3>
+    <p>{{ p.summary | default: p.subtitle }}</p>
+    <div class="card-links">
+        <a href="{{ p.url | relative_url }}" class="btn-link btn-view">View Project</a>
+    </div>
+</article>

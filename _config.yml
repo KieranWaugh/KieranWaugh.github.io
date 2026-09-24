@@ -1,0 +1,58 @@
+# ------------------------------------------------------------------
+#  Site settings — edit these and every page picks up the change.
+#  (Restart `bundle exec jekyll serve` after editing this file.)
+# ------------------------------------------------------------------
+title: Kieran Waugh
+description: HCI Research Scientist | UX Research | PhD in HCI
+url: "https://kieranwaugh.com"
+baseurl: ""
+
+author:
+  name: Kieran Waugh
+  subtitle: HCI Research Scientist | UX Research | PhD in HCI
+  affiliation: University of Glasgow
+  location: Glasgow, Scotland
+  photo: /Uploads/Images/profile.jpeg
+  cv: /Uploads/Files/Kieran_Waugh_CV.pdf
+  email: website@kieranwaugh.com
+  email_display: website[at]kieranwaugh.com
+  github: https://github.com/kieranwaugh
+  linkedin: https://www.linkedin.com/in/kieranwaugh/
+  linkedin_display: linkedin.com/in/kieranwaugh/
+  scholar: https://scholar.google.com/citations?hl=en&user=nq62qrIAAAAJ
+
+# Navigation bar (top of every page)
+nav:
+  - title: Bio
+    url: /#about
+  - title: Experience
+    url: /#experience
+  - title: Projects
+    url: /#portfolio
+  - title: Publications
+    url: /#publications
+  - title: Contact
+    url: /#contact
+
+footer:
+  license: Licensed under CC BY-NC-ND 4.0.
+
+# GoatCounter analytics. Loaded on pages with `analytics: true` in
+# their front matter, or on every page if `analytics_everywhere: true`.
+goatcounter: kieranwaugh
+analytics_everywhere: false
+
+# Defaults so project pages don't need to repeat the layout
+defaults:
+  - scope:
+      path: "Projects"
+    values:
+      layout: project
+
+# Files that should not be published
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle

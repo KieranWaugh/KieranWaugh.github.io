@@ -1,0 +1,33 @@
+<header class="navbar">
+    <div class="container">
+
+        <div class="nav-left">
+            <a href="{{ '/' | relative_url }}" class="nav-brand">{{ site.author.name }}</a>
+
+            <ul class="nav-links">
+
+                <li class="theme-toggle-mobile-container">
+                    <label></label>
+                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+
+                {% for item in site.nav %}
+                <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <button id="theme-toggle-desktop" class="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <button class="nav-toggle" id="nav-toggle-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+    </div>
+</header>

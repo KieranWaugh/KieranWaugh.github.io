@@ -1,0 +1,188 @@
+# Publications — newest first. The publications page groups these by year.
+# To add a paper: copy an entry, fill it in, and drop the PDF in Uploads/Papers/.
+# featured: true  -> also shown on the homepage.
+# authors: your own name (site author) is bolded automatically.
+
+- title: "Could the Stylus Be Mightier Than the Controller? An Investigation Into the Heisenberg Effect of Spatial Interaction for 3D Tracked Styluses"
+  authors: ["Kieran Waugh", "Mario Gutierrez", "Aidan Kehoe"]
+  venue: "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI '26)"
+  year: 2026
+  pdf: "/Uploads/Papers/Waugh et al -  Stylus CHI26.pdf"
+  doi: "10.1145/3772363.3798375"
+  featured: true
+  cite: "Kieran Waugh, Mario Gutierrez, and Aidan Kehoe. 2026. Could the Stylus Be Mightier Than the Controller? An Investigation Into the Heisenberg Effect of Spatial Interaction for 3D Tracked Styluses. In Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA’26) Association for Computing Machinery, New York, NY, USA, Article 205, 1–6. https://doi.org/10.1145/3772363.3798375"
+  bibtex: |
+    @inproceedings{10.1145/3772363.3798375,
+    author = {Waugh, Kieran and Gutierrez, Mario and Kehoe, Aidan},
+    title = {Could the Stylus Be Mightier Than the Controller? An Investigation Into the Heisenberg Effect of Spatial Interaction for 3D Tracked Styluses},
+    year = {2026},
+    isbn = {9798400713941},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3772363.3798375},
+    doi = {10.1145/3772363.3798375},
+    abstract = {Recent advancements in extended reality have enabled new peripheral types beyond standard controllers. Devices such as 3D-tracked styluses emulate the feel of traditional pens, offering a more familiar interaction style and higher precision. However, these spatial input devices are susceptible to the Heisenberg Effect of Spatial Interaction, where involuntary cursor movement is caused by the physical act of selection (e.g., button pressing), reducing selection accuracy. We present an exploratory investigation into the Heisenberg Effect using a 3D-tracked stylus (Logitech MX Ink) and a standard controller (Meta Quest Touch Plus). Through selection tasks across varying target widths, amplitudes, and actuation fingers, results indicate that styluses are less susceptible to the Heisenberg Effect than controllers. However, choice of actuation finger matters: thumb-based input produces significantly more unintended movement than index. We present these findings to open a discussion on the future of XR peripheral design to enable both fast and precise input.},
+    booktitle = {Extended Abstracts of the CHI Conference on Human Factors in Computing Systems},
+    articleno = {205},
+    numpages = {7},
+    keywords = {Mixed Reality, Virtual Reality, Stylus, Heisenberg Effect},
+    location = {Barcelona, Spain},
+    series = {CHI EA '26}
+    }
+
+- title: "Digital Proxemics as Measures of Social Interaction in Hybrid XR"
+  authors: ["Iain William McLean", "Andreea Caragea", "Ross Johnstone", "Despoina Vasiliki Sampatakou", "Kieran Waugh", "Julie R. Williamson"]
+  venue: "In CHI Conference on Human Factors in Computing Systems (CHI '26)"
+  year: 2026
+  pdf: "/Uploads/Papers/McLean et al - Social Signals.pdf"
+  doi: "10.1145/3772318.3790512"
+  featured: false
+  cite: "Iain William McLean, Andreea Caragea, Ross Johnstone, Despoina Vasiliki Sampatakou, Kieran Waugh, and Julie R. Williamson. 2026. Digital Proxemics as Measures of Social Interaction in Hybrid XR. In Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI ’26), Association for Computing Machinery, New York, NY, USA, Article 205, 1–6. https://doi.org/10.1145/3772363.3798375"
+  bibtex: |
+    @inproceedings{10.1145/3772318.3790512,
+    author = {Iain William McLean, Andreea Caragea, Ross Johnstone, Despoina Vasiliki Sampatakou, Kieran Waugh, and Julie R. Williamson},
+    title = {Digital Proxemics as Measures of Social Interaction in Hybrid XR},
+    year = {2026},
+    isbn = {9798400713941},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3772318.3790512},
+    doi = {10.1145/3772318.3790512},
+    abstract = {Hybrid meetings are the new reality, yet they lack the richness of face-to-face interaction. In shared spaces, virtual or physical, interaction relies on more than words: proximity, non-verbal cues, and subtle movements all shape communication. Proximity captures how close we stand, where we face, and how we move around others. This paper investigates how proxemics in dyad and triad conversations translate across physical and virtual contexts. We conducted a study with 24 participants in four groups, completing social tasks under four conditions: face-to-face, co-located XR, remote XR, and hybrid XR. Our instrumentation of physical and virtual environments enables direct comparison. The work contributes a rich open dataset of 2.3 million rows across 32 columns, supporting comparative and replicable analysis. This is the first study to compare proxemics across face-to-face, co-located XR, remote XR, and hybrid XR, offering a foundation for understanding how social space translates across contexts.},
+    booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+    articleno = {205},
+    numpages = {7},
+    keywords = {Social XR, Social Signal Processing},
+    location = {Barcelona, Spain},
+    series = {CHI '26}
+    }
+
+- title: "Everything to Gain: Combining Area Cursors with increased Control-Display Gain for Fast and Accurate Touchless Input"
+  authors: ["Kieran Waugh", "Mark McGill", "Euan Freeman"]
+  venue: "In CHI Conference on Human Factors in Computing Systems (CHI '25)"
+  year: 2025
+  pdf: "/Uploads/Papers/Waugh et al - Everything to Gain.pdf"
+  doi: "10.1145/3706598.3714021"
+  featured: true
+  cite: "Kieran Waugh, Mark McGill, and Euan Freeman. 2025. Everything to Gain: Combining Area Cursors with increased Control-Display Gain for Fast and Accurate Touchless Input. In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25). Association for Computing Machinery, New York, NY, USA, Article 726, 1–16. https://doi.org/10.1145/3706598.3714021"
+  bibtex: |
+    @inproceedings{10.1145/3706598.3714021,
+    author = {Waugh, Kieran and McGill, Mark and Freeman, Euan},
+    title = {Everything to Gain: Combining Area Cursors with increased Control-Display Gain for Fast and Accurate Touchless Input},
+    year = {2025},
+    isbn = {9798400713941},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3706598.3714021},
+    doi = {10.1145/3706598.3714021},
+    abstract = {Touchless displays often use mid-air gestures to control on-screen cursors for pointer interactions. Area cursors can simplify touchless cursor input by implicitly targeting nearby widgets without the cursor entering the target. However, for displays with dense target layouts, the cursor still has to arrive close to the widget, meaning the benefits of area cursors for time-to-target and effort are diminished. Through two experiments, we demonstrate for the first time that fine-tuning the mapping between hand and cursor movements (control-display gain – CDG) can address the deficiencies of area cursors and improve the performance of touchless interaction. Across several display sizes and target densities (representative of myriad public displays used in retail, transport, museums, etc), our findings show that the forgiving nature of an area cursor compensates for the imprecision of a high CDG, helping users interact more effectively with smaller and more controlled hand/arm movements.},
+    booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems},
+    articleno = {726},
+    numpages = {16},
+    keywords = {Mid-Air Gestures, Area Cursors, Touchless Interaction, Touchless Widgets, Control Display Gain},
+    location = {Yokohama, Japan},
+    series = {CHI '25}
+    }
+
+- title: "Proxemic Cursor Interactions for Touchless Widget Control"
+  authors: ["Kieran Waugh", "Mark McGill", "Euan Freeman"]
+  venue: "In ACM Symposium on Spatial User Interaction (SUI '23)"
+  year: 2023
+  pdf: "/Uploads/Papers/Waugh et al proxemic-cursor-interactions.pdf"
+  doi: "10.1145/3607822.3614525"
+  featured: true
+  cite: "Kieran Waugh, Mark McGill, and Euan Freeman. 2023. Proxemic Cursor Interactions for Touchless Widget Control. In Proceedings of the 2023 ACM Symposium on Spatial User Interaction (SUI '23). Association for Computing Machinery, New York, NY, USA, Article 21, 1–12. https://doi.org/10.1145/3607822.3614525"
+  bibtex: |
+    @inproceedings{10.1145/3607822.3614525,
+    author = {Waugh, Kieran and McGill, Mark and Freeman, Euan},
+    title = {Proxemic Cursor Interactions for Touchless Widget Control},
+    year = {2023},
+    isbn = {9798400702815},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3607822.3614525},
+    doi = {10.1145/3607822.3614525},
+    abstract = {Touchless gesture interfaces often use cursor-based interactions, where widgets are targeted by a movable cursor and activated with a mid-air gesture (e.g., push or Pinch). Continuous interactions like slider manipulation can be challenging in mid-air because users need to precisely target widgets and then maintain an ‘activated’ state whilst moving the cursor. We investigated proxemic cursor interactions as a novel alternative, where cursor proximity allows users to acquire and keep control of user interface widgets without precisely targeting them. Users took advantage of proxemic targeting, though gravitated towards widgets when negotiating the boundaries between multiple elements. This allowed users to gain control more quickly than with non-proxemic behaviour, and made it easier to move between user interface elements. We find that proxemic cursor interactions can improve the usability of touchless user interfaces, especially for slider interactions, paving the way to more comfortable and efficient use of touchless displays.},
+    booktitle = {Proceedings of the 2023 ACM Symposium on Spatial User Interaction},
+    articleno = {21},
+    numpages = {12},
+    keywords = {Mid-Air Gestures, Pinch Gestures, Proxemics, Touchless Interaction, Touchless Widgets},
+    location = {Sydney, NSW, Australia},
+    series = {SUI '23}
+    }
+
+- title: "Demonstrating Proxemic Cursor Input for Touchless Displays"
+  authors: ["Kieran Waugh", "Mark McGill", "Euan Freeman"]
+  venue: "In ACM Symposium on Spatial User Interaction (SUI '23)"
+  year: 2023
+  pdf: "/Uploads/Papers/Waugh et al - demonstrating-proxemic-cursor.pdf"
+  doi: "10.1145/3607822.3618014"
+  featured: false
+  cite: "Kieran Waugh, Mark McGill, and Euan Freeman. 2023. Demonstrating Proxemic Cursor Input for Touchless Displays. In Proceedings of the 2023 ACM Symposium on Spatial User Interaction (SUI '23). Association for Computing Machinery, New York, NY, USA, Article 37, 1–2. https://doi.org/10.1145/3607822.3618014"
+  bibtex: |
+    @inproceedings{10.1145/3607822.3618014,
+    author = {Waugh, Kieran and McGill, Mark and Freeman, Euan},
+    title = {Demonstrating Proxemic Cursor Input for Touchless Displays},
+    year = {2023},
+    isbn = {9798400702815},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3607822.3618014},
+    doi = {10.1145/3607822.3618014},
+    abstract = {Touchless gesture interfaces often use cursor-based interactions, where widgets are targeted by a movable cursor and activated with a mid-air gesture. Proxemic cursor interactions are a novel alternative that facilitate faster selection without the need for direct targeting. We present an interactive demonstration exhibit that uses proxemic cursor interactions for input to a touchless public display.},
+    booktitle = {Proceedings of the 2023 ACM Symposium on Spatial User Interaction},
+    articleno = {37},
+    numpages = {2},
+    keywords = {Mid-Air Gestures, Proxemics, Touchless Interaction, Touchless Widgets},
+    location = {Sydney, NSW, Australia},
+    series = {SUI '23}
+    }
+
+- title: "Push or Pinch? Exploring Slider Control Gestures for Touchless User Interfaces"
+  authors: ["Kieran Waugh", "Mark McGill", "Euan Freeman"]
+  venue: "In Nordic Human-Computer Interaction (NordiCHI '22)"
+  year: 2022
+  pdf: "/Uploads/Papers/Waugh et al - Push or Pinch.pdf"
+  doi: "10.1145/3546155.3546702"
+  featured: true
+  cite: "Kieran Waugh, Mark McGill, and Euan Freeman. 2022. Push or Pinch? Exploring Slider Control Gestures for Touchless User Interfaces. In Nordic Human-Computer Interaction Conference (NordiCHI '22). Association for Computing Machinery, New York, NY, USA, Article 37, 1–10. https://doi.org/10.1145/3546155.3546702"
+  bibtex: |
+    @inproceedings{10.1145/3546155.3546702,
+    author = {Waugh, Kieran and McGill, Mark and Freeman, Euan},
+    title = {Push or Pinch? Exploring Slider Control Gestures for Touchless User Interfaces},
+    year = {2022},
+    isbn = {9781450396998},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3546155.3546702},
+    doi = {10.1145/3546155.3546702},
+    abstract = {Touchless gesture interfaces enable user interaction without the need for direct physical contact. Recently there has been increased interest in deploying such interfaces over concerns about touchscreen sterility. Many touchless displays use gestures that mimic pointer-based interactions, with a ‘cursor’ mapped to finger position, that users activate by ‘pushing’ their finger forwards. Mid-air pushing with a virtual cursor is fine for discrete interactions like button activation; however, users have difficulty exerting control over continuous interactions like sliding and scrolling, because it is challenging to keep the hand at a consistent depth when gesturing. We investigate interaction techniques for slider control that use alternative mode switches between (un)pressed states. Our findings show that pinch gestures are preferred by most users and offer a faster alternative for acquiring control of sliders, as pinching has two clearly defined states and avoids the ambiguous use of depth for delineating input states.},
+    booktitle = {Nordic Human-Computer Interaction Conference},
+    articleno = {37},
+    numpages = {10},
+    keywords = {Touchless Interaction, Slider Control, Mid-Air Gestures},
+    location = {Aarhus, Denmark},
+    series = {NordiCHI '22}
+    }
+
+- title: "Don’t Touch Me! A Comparison of Usability on Touch and Non-touch Inputs"
+  authors: ["Kieran Waugh", "Judy Robertson"]
+  venue: "In Human-Computer Interaction – INTERACT (INTERACT '21)"
+  year: 2021
+  pdf: "/Uploads/Papers/Waugh et al - Dont Touch me.pdf"
+  doi: "10.1007/978-3-030-85607-6_46"
+  featured: false
+  cite: "Waugh, K., Robertson, J. (2021). Don’t Touch Me! A Comparison of Usability on Touch and Non-touch Inputs. In: Ardito, C., et al. Human-Computer Interaction – INTERACT 2021. INTERACT 2021. Lecture Notes in Computer Science(), vol 12936. Springer, Cham. https://doi.org/10.1007/978-3-030-85607-6_46"
+  bibtex: |
+    @InProceedings{10.1007/978-3-030-85607-6_46,
+    author = {Waugh, Kieran and Robertson, Judy},
+    editor = {Ardito, Carmelo and Lanzilotti, Rosa and Malizia, Alessio and Petrie, Helen and Piccinno, Antonio and Desolda, Giuseppe and Inkpen, Kori},
+    title = {Don't Touch Me! A Comparison of Usability on Touch and Non-touch Inputs},
+    booktitle = {Human-Computer Interaction -- INTERACT 2021},
+    year = {2021},
+    publisher = {Springer International Publishing},
+    address = {Cham},
+    pages = {400--404},
+    abstract = {Public touchscreens are filthy and, regardless of how often they are cleaned, they pose a considerable risk in the transmission of bacteria and viruses. While we rely on their use, we should find a feasible alternative to touch devices. Non-touch interaction, via the use of mid-air gestures, has been previously labelled as not user friendly and unsuitable. However, previous works have extensively compared such interaction to precise mouse movements. In this paper, we investigate and compare the usability of an interface controlled via a touchscreen and a non-touch device. Participants (N = 22) using a touchscreen and the Leap Motion Controller, performed tasks on a mock-up ticketing machine, later evaluating their experience using the System Usability and Gesture Usability scales. Results show that, in contrast to the previous works, the non-touch method was usable and quickly learnable. We conclude with recommendations for future work on making a non-touch interface more user-friendly.},
+    isbn = {978-3-030-85607-6}
+    }

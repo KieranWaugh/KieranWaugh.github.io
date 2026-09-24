@@ -1,0 +1,13 @@
+{%- assign pub = include.pub -%}
+<article class="content-card"
+        data-cite-text="{{ pub.cite | strip | escape }}"
+        data-cite-bibtex="{{ pub.bibtex | strip | escape }}">
+    <h3>{{ pub.title }}</h3>
+    <p class="authors">{% for a in pub.authors %}{% if a == site.author.name %}<b>{{ a }}</b>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <p class="conference">{{ pub.venue }}, {{ pub.year }}</p>
+    <div class="card-links">
+        {% if pub.pdf %}<a href="{{ pub.pdf | relative_url }}" target="_blank" class="btn-link">PDF</a>{% endif %}
+        {% if pub.url %}<a href="{{ pub.url }}" target="_blank" class="btn-link">DOI</a>{% elsif pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" class="btn-link">DOI</a>{% endif %}
+        {% if pub.bibtex %}<a href="#" class="btn-link btn-cite">Cite</a>{% endif %}
+    </div>
+</article>

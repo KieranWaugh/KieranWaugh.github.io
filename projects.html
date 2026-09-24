@@ -1,109 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Projects - Kieran Waugh</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-
-    <header class="navbar">
-    <div class="container">
-        
-        <div class="nav-left">
-            <a href="index.html" class="nav-brand">Kieran Waugh</a>
-            
-            <ul class="nav-links">
-                
-                <li class="theme-toggle-mobile-container">
-                    <label></label>
-                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-                
-                <li><a href="index.html#about">Bio</a></li>
-                <li><a href="index.html#experience">Experience</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="index.html#publications">Publications</a></li>             
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-        
-        <div class="nav-right">
-            <button id="theme-toggle-desktop" class="theme-toggle-btn">
-                <i class="fas fa-moon"></i>
-            </button>
-            
-            <button class="nav-toggle" id="nav-toggle-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-    </div>
-</header>
-
-    <main class="container">
-        
-        <!-- <section class="project-page-header">
-            <p></p>
-            <h1>All Projects</h1>
-            <p class="subtitle">A gallery of my portfolio, including PhD research projects and personal projects.</p>
-        </section> -->
+---
+layout: default
+title: All Projects
+subtitle: A gallery of my portfolio, including PhD research projects and personal projects.
+---
+{%- comment -%}
+  Lists every page under Projects/ with `listed: true`, sorted by `order`.
+  To add a project, copy _templates/project-template.md (see README.md).
+{%- endcomment -%}
 
         <section class="page-header">
-            <h1>All Projects</h1>
-            <p class="subtitle">A gallery of my portfolio, including PhD research projects and personal projects.</p>
+            <h1>{{ page.title }}</h1>
+            <p class="subtitle">{{ page.subtitle }}</p>
         </section>
 
         <section class="project-grid">
-
-            <article class="content-card">
-                <h3>Spatial Area Cursors - Introducing the Proxemic Cursor</h3>
-                <p>A user-centred research project to make spatial touchless interactions faster, easier, and more comfortable.</p>
-                <div class="card-links">
-                    <a href="Projects/Spatial-area-cursors.html" class="btn-link btn-view">View Project</a>
-                    
-                </div>
-            </article>
-
-            <article class="content-card">
-                <h3>Push or Pinch? - Touchless Selection Gestures</h3>
-                <p>A formative study to find the best gesture for touchless control.</p>
-                <div class="card-links">
-                    <a href="Projects/Push-or-Pinch/Push-or-pinch.html" class="btn-link btn-view">View Project</a>
-                    
-                </div>
-            </article>
-
-            <article class="content-card">
-                <h3>Investigating High-Precision Input for XR Styluses (MX Ink)</h3>
-                <p>A two-part investigation into the accuracy of 3D stylus selection (the Heisenberg Effect) and the design of new gestures (Double-Tap).</p>
-                <div class="card-links">
-                    <a href="Projects/MX-Ink/mx-ink.html" class="btn-link btn-view">View Project</a>
-                </div>
-            </article>
-
-            <article class="content-card">
-                <h3>Everything to Gain</h3>
-                <p>Combining Area Cursors with Control-Display Gain for fast, accurate, and low-effort touchless input.</p>
-                <div class="card-links">
-                    <a href="Projects/Everything-to-gain/everything-to-gain.html" class="btn-link btn-view">View Project</a>
-                </div>
-            </article>
-
-            </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Designed and developed myself. Hosted on <i style="font-size:18px" class="fab">&#xf09b;</i>.</p>
-            <p>&copy; 2025 Kieran Waugh. Licensed under CC BY-NC-ND 4.0.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+            {% assign projects = site.html_pages | where: "listed", true | sort: "order" %}
+            {% for project in projects %}{% include project-card.html project=project %}
+            {% endfor %}
+        </section>

@@ -1,58 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Push or Pinch?- Kieran Waugh</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
+---
+title: "Push or Pinch? - Touchless Selection Gestures"
+short_title: "Push or Pinch?"
+subtitle: "A formative study to find the best gesture for touchless control"
+summary: "A formative study to find the best gesture for touchless control."
 
-    <header class="navbar">
-    <div class="container">
-        
-        <div class="nav-left">
-            <a href="../../index.html" class="nav-brand">Kieran Waugh</a>
-            
-            <ul class="nav-links">
-                
-                <li class="theme-toggle-mobile-container">
-                    <label></label>
-                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-                
-                <li><a href="../../index.html#about">Bio</a></li>
-                <li><a href="../../index.html#experience">Experience</a></li>
-                <li><a href="../../projects.html">Projects</a></li>
-                <li><a href="../../index.html#publications">Publications</a></li>             
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-        
-        <div class="nav-right">
-            <button id="theme-toggle-desktop" class="theme-toggle-btn">
-                <i class="fas fa-moon"></i>
-            </button>
-            
-            <button class="nav-toggle" id="nav-toggle-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+# Project listing (projects page / homepage)
+listed: true
+featured: false
+order: 2
 
-    </div>
-</header>
-
-    <main class="container">
-        
-        <section class="project-header">
-            <h1>Push or Pinch? - Touchless Selection Gestures</h1>
-            <p class="subtitle">A formative study to find the best gesture for touchless control</p>
-        </section>
-
-        <section class="project-content">
+# Publication links shown at the bottom of the page
+published_in: "the 2023 ACM Symposium on Spatial User Interaction (SUI '23)"
+paper: "/Uploads/Papers/Waugh et al - Push or Pinch.pdf"
+dataset: "https://zenodo.org/records/6779013"
+doi: "10.1145/3546155.3546702"
+---
             <img src="teaser.png" alt="Project Screenshot">
 
             <h2>Overview: The Problem & Solution</h2>
@@ -104,28 +66,3 @@
             <p><b>Pinching Was Preferred: </b>Users strongly preferred the pinch gesture.</p>
             <p><b>The UX Insight: </b>Qualitative feedback from users revealed why pinching was preferred. Pinching has two clearly defined states (open and closed) and avoids the ambiguous forward push motion, which some users found "frustrating". This gave them a greater sense of control and confidence.</p>
             <p><b>The Potential of Area Cursors: </b>The pinch from anywhere variant of pinch was included to test a best case scenario verison of pinch (where tracking is not an issue). However, it proved to to be the most preferred, fastest and most accurate control method. This opens up the possibilty of dynamic area cursor for spatial interafces, which I further explore <b><a href="../../Projects/Spatial-area-cursors.html"><i></i> here</a></b>.</p>
-            
-
-            <p>This research was accepted and published at the 2023 ACM Symposium on Spatial User Interaction (SUI '23). </p>
-             <div class="card-links">
-                    <a href="../../Uploads/Papers/Waugh et al - Push or Pinch.pdf" target="_blank" class="btn-link">View Paper</a>
-                    <a href="https://zenodo.org/records/6779013" target="_blank" class="btn-link">Dataset</a>
-                    <a href="https://doi.org/10.1145/3546155.3546702" target="_blank" class="btn-link">DOI</a>
-                    
-                </div>
-            
-            <a href="../../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Designed and developed myself. Hosted on <i style="font-size:18px" class="fab">&#xf09b;</i>.</p>
-            <p>&copy; 2025 Kieran Waugh. Licensed under CC BY-NC-ND 4.0.</p>
-        </div>
-    </footer>
-
-    <script src="../../script.js"></script>
-</body>
-</html>

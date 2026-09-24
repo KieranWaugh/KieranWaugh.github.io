@@ -1,58 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MX Ink - Kieran Waugh</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
+---
+title: "Investigating High-Precision Input for XR Styluses (MX Ink)"
+short_title: "MX Ink"
+subtitle: "A two-part investigation into the accuracy of 3D stylus selection (the Heisenberg Effect) and the design of new gestures (Double-Tap)."
 
-    <header class="navbar">
-    <div class="container">
-        
-        <div class="nav-left">
-            <a href="../../index.html" class="nav-brand">Kieran Waugh</a>
-            
-            <ul class="nav-links">
-                
-                <li class="theme-toggle-mobile-container">
-                    <label></label>
-                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-                
-                <li><a href="../../index.html#about">Bio</a></li>
-                <li><a href="../../index.html#experience">Experience</a></li>
-                <li><a href="../../projects.html">Projects</a></li>
-                <li><a href="../../index.html#publications">Publications</a></li>             
-                <li><a href="../../index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-        
-        <div class="nav-right">
-            <button id="theme-toggle-desktop" class="theme-toggle-btn">
-                <i class="fas fa-moon"></i>
-            </button>
-            
-            <button class="nav-toggle" id="nav-toggle-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-    </div>
-</header>
-
-    <main class="container">
-        
-        <section class="project-header">
-            <h1>Investigating High-Precision Input for XR Styluses (MX Ink)</h1>
-            <p class="subtitle">A two-part investigation into the accuracy of 3D stylus selection (the Heisenberg Effect) and the design of new gestures (Double-Tap).</p>
-        </section>
-
-        <section class="project-content">
+# Project listing (projects page / homepage)
+listed: false
+---
             <img src="mx-ink.jpg" alt="Project Screenshot">
 
             <h2>Overview: The Problem & Solution</h2>
@@ -121,20 +74,3 @@
                 </ul>
                 <li><b>Overall Conclusion & Design Recommendations: </b>A stylus is a superior tool for precision, but its grip design is key. To be effective, a double-tap gesture detector must use different timing models based on whether the user is tapping with their thumb or index finger. A one-size-fits-all model can fail for one of these groups and lead to a frustrating user experience.</li>
             </ul>
-
-
-            <a href="../../projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Designed and developed myself. Hosted on <i style="font-size:18px" class="fab">&#xf09b;</i>.</p>
-            <p>&copy; 2025 Kieran Waugh. Licensed under CC BY-NC-ND 4.0.</p>
-        </div>
-    </footer>
-
-    <script src="../../script.js"></script>
-</body>
-</html>

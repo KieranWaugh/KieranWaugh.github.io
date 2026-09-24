@@ -1,0 +1,24 @@
+---
+layout: default
+---
+        <section class="project-header">
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
+            {% if page.header_button %}
+            <a href="{{ page.header_button.url }}" target="_blank" class="btn-header-cta"><i class="{{ page.header_button.icon | default: 'fas fa-file-alt' }}"></i> {{ page.header_button.label }}</a>
+            {% endif %}
+        </section>
+
+        <section class="project-content">
+{{ content }}
+            {% if page.published_in or page.paper or page.dataset or page.doi %}
+            {% if page.published_in %}<p>This research was accepted and published at {{ page.published_in }}.</p>{% endif %}
+            <div class="card-links">
+                {% if page.paper %}<a href="{{ page.paper | relative_url }}" target="_blank" class="btn-link">View Paper</a>{% endif %}
+                {% if page.dataset %}<a href="{{ page.dataset }}" target="_blank" class="btn-link">Dataset</a>{% endif %}
+                {% if page.doi %}<a href="https://doi.org/{{ page.doi }}" target="_blank" class="btn-link">DOI</a>{% endif %}
+            </div>
+            {% endif %}
+
+            <a href="{{ '/projects.html' | relative_url }}" class="back-link"><i class="fas fa-arrow-left"></i> Back to all projects</a>
+        </section>

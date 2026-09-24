@@ -1,384 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kieran Waugh - User Experience Researcher</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-
-    <header class="navbar">
-    <div class="container">
-        
-        <div class="nav-left">
-            <a href="index.html" class="nav-brand">Kieran Waugh</a>
-            
-            <ul class="nav-links">
-                
-                <li class="theme-toggle-mobile-container">
-                    <label></label>
-                    <button id="theme-toggle-mobile" class="theme-toggle-btn">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-                
-                <li><a href="index.html#about">Bio</a></li>
-                <li><a href="index.html#experience">Experience</a></li>
-                <li><a href="index.html#portfolio">Projects</a></li>
-                <li><a href="index.html#publications">Publications</a></li>             
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-        
-        <div class="nav-right">
-            <button id="theme-toggle-desktop" class="theme-toggle-btn">
-                <i class="fas fa-moon"></i>
-            </button>
-            
-            <button class="nav-toggle" id="nav-toggle-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-
-    </div>
-</header>
-    <main class="container">
+---
+layout: default
+head_title: Kieran Waugh - User Experience Researcher
+citations: true
+---
+{%- comment -%}
+  Homepage. Most content comes from:
+    _config.yml            name, links, CV, contact details
+    _data/interests.yml    interests list
+    _data/experience.yml   experience timeline
+    _data/education.yml    education timeline
+    _data/publications.yml papers marked `featured: true`
+    Projects/**            project pages marked `featured: true`
+  The "About Me" paragraph below is edited directly here.
+{%- endcomment -%}
+{%- assign a = site.author -%}
 
         <section id="about" class="about-section">
             <div class="profile-header">
-                <img src="Uploads/Images/profile.jpeg" alt="Profile Photo" class="profile-pic">
+                <img src="{{ a.photo | relative_url }}" alt="Profile Photo" class="profile-pic">
                 <div class="profile-info">
-                    <h1>Kieran Waugh</h1>
-                    <p class="subtitle">HCI Research Scientist | UX Research | PhD in HCI</p>
-                    <p class="affiliation">University of Glasgow</p>
-                    
+                    <h1>{{ a.name }}</h1>
+                    <p class="subtitle">{{ a.subtitle }}</p>
+                    <p class="affiliation">{{ a.affiliation }}</p>
+
                     <div class="social-links">
-                        <a href="mailto:website@kieranwaugh.com" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://github.com/kieranwaugh" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/kieranwaugh/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://scholar.google.com/citations?hl=en&user=nq62qrIAAAAJ" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="Uploads/Files/Kieran_Waugh_CV.pdf" aria-label="Download CV" target="_blank" download><i class="far fa-file-lines"></i> </a>
-                        
+                        <a href="mailto:{{ a.email }}" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="{{ a.github }}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="{{ a.linkedin }}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="{{ a.scholar }}" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="{{ a.cv | relative_url }}" aria-label="Download CV" target="_blank" download><i class="far fa-file-lines"></i> </a>
                     </div>
                 </div>
             </div>
 
             <div class="bio-content">
                 <h2>About Me</h2>
-                    <p>Research scientist and UX researcher with a PhD in Human-Computer Interaction, working across research and practice on how people interact with emerging hardware and software. I own studies end-to-end from framing the question, recruitment and analysis, to the recommendations that follow. I use whichever mix of experiments, behavioural data, interviews, and field observation the question actually needs, so findings explain not just what people do but why. I enjoy seeking open-ended problems where the method has to be built before the question can be answered. My work spans academic and commercial research, and has shipped into released products and developer standards.</p>                
+                <p>Research scientist and UX researcher with a PhD in Human-Computer Interaction, working across research and practice on how people interact with emerging hardware and software. I own studies end-to-end from framing the question, recruitment and analysis, to the recommendations that follow. I use whichever mix of experiments, behavioural data, interviews, and field observation the question actually needs, so findings explain not just what people do but why. I enjoy seeking open-ended problems where the method has to be built before the question can be answered. My work spans academic and commercial research, and has shipped into released products and developer standards.</p>
                 <h3>Interests</h3>
                 <ul class="interests-list">
-                    <li>Human-Computer Interaction</li>
-                    <li>User Research</li>
-                    <li>User Studies</li>
-                    <li>Interaction Design</li>
-                    <li>UX Design</li>
-                    <li>User Experience</li>
-                    <li>Interaction Techniques</li>
-                    <li>Extended Reality</li>
-                    <li>Augmented Reality</li>
-                    <li>Virtual Reality</li>
+                    {% for interest in site.data.interests %}<li>{{ interest }}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </section>
 
-
         <section id="experience" class="content-section">
             <h2>Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Research Assistant - Immersive Interaction</h3>
-                        <p class="timeline-details"><em>University of Glasgow | June 2025 - Present</em></p>
-                        <p>Spearheaded the analysis of multiple research projects. My role consists of engineering prototypes and completing both quantitative and qualitative analysis to communicate findings to stakeholders.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Extended Reality Research Intern</h3>
-                        <p class="timeline-details"><em>Logitech | Summer 2024</em></p>
-                        <p>Designed and led user studies for the MX-Ink mixed-reality stylus, informing key design decisions in collaboration with Meta that were shipped in publicly released software and OS. My research pinpointed discrepancies in how humans hold devices and how finger moment affects interaction within virtual environments.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Digital Skills Project Research Assistant (Part-time)</h3>
-                        <p class="timeline-details"><em>Digital Skills Education | June 2020 - Present</em></p>
-                        <p>Collaborated with the Scottish government, Education Scotland, and national trade unions to pioneer new methods of teaching complex computer science. I helped design and launch innovative online learning modules for young people while separately developing and delivering hands-on cyber skills workshops to enhance the technical competency and digital confidence of older adults.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Assistant Technical Program Chair (Volunteer)</h3>
-                        <p class="timeline-details"><em>ACM CHI Conference 2025 | August 2022 - May 2024</em></p>
-                        <p>Helped organise CHI' 24, conference of over 4000 attendees. My role consisted of creating the technical programme, managing aspects of the peer-review process, and directing a volunteer workforce of over 100 people.</p>
-                    </div>
-                </div>
+                {% for item in site.data.experience %}{% include timeline-item.html item=item %}
+                {% endfor %}
                 <div class="view-all-container">
-                <a href="Uploads/Files/Kieran_Waugh_CV.pdf" target = "_blank" class="btn-link btn-view-all" download>
-                    Download Full CV
-                </a>
-            </div>
+                    <a href="{{ a.cv | relative_url }}" target="_blank" class="btn-link btn-view-all" download>
+                        Download Full CV
+                    </a>
+                </div>
             </div>
         </section>
 
         <section id="education" class="content-section">
             <h2>Education</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>PhD - Human Computer Interaction</h3>
-                        <p class="timeline-details"><em>University of Glasgow | October 2021 - Febuary 2026</em></p>
-                        <p>Thesis - Designing for Comfort and Efficiency in Mid-Air Spatial Interfaces</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>MSc By Research - Human Computer Interaction</h3>
-                        <p class="timeline-details"><em>The University of Edinburgh | Septemebr 2020 - September 2021</em></p>
-                        <p>Thesis - Don't Touch Me! An Exploration of Interface Design for Touchless Systems</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>BSc - Computer Science</h3>
-                        <p class="timeline-details"><em>The University of Edinburgh | Septemebr 2016 - September 2020</em></p>
-                        <p>Thesis - Exploring navigation for visually impaired pedestrians through physical landmarks</p>
-                    </div>
-                </div>
+                {% for item in site.data.education %}{% include timeline-item.html item=item %}
+                {% endfor %}
             </div>
         </section>
 
         <section id="portfolio" class="content-section">
             <h2>Featured Projects</h2>
-
-            <article class="content-card">
-                <h3>Spatial Area Cursors - Introducing the Proxemic Cursor</h3>
-                <p>A user-centred research project to make spatial touchless interactions faster, easier, and more comfortable.</p>
-                <div class="card-links">
-                    <a href="Projects/Spatial-area-cursors.html" class="btn-link btn-view">View Project</a>
-                </div>
-            </article>
-
-            <article class="content-card">
-                <h3>Investigating High-Precision Input for XR Styluses (MX Ink)</h3>
-                <p>A two-part investigation into the accuracy of 3D stylus selection (the Heisenberg Effect) and the design of new gestures (Double-Tap).</p>
-                <div class="card-links">
-                    <a href="Projects/MX-Ink/mx-ink.html" class="btn-link btn-view">View Project</a>
-                </div>
-            </article>
-
+            {% assign projects = site.html_pages | where: "listed", true | where: "featured", true | sort: "order" %}
+            {% for project in projects %}{% include project-card.html project=project %}
+            {% endfor %}
             <div class="view-all-container">
-                <a href="projects.html" class="btn-link btn-view-all">View All Projects</a>
+                <a href="{{ '/projects.html' | relative_url }}" class="btn-link btn-view-all">View All Projects</a>
             </div>
         </section>
- 
-
-
 
         <section id="publications" class="content-section">
             <h2>Featured Publications</h2>
-
-             
-            <article class="content-card"
-                    data-cite-text="Kieran Waugh, Mario Gutierrez, and Aidan Kehoe. 2026. Could the Stylus Be Mightier Than the Controller? An Investigation Into the Heisenberg Effect of Spatial Interaction for 3D Tracked Styluses. In Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA’26) Association for Computing Machinery, New York, NY, USA, Article 205, 1–6. https://doi.org/10.1145/3772363.3798375"
-                    data-cite-bibtex="@inproceedings{10.1145/3772363.3798375,
-author = {Waugh, Kieran and Gutierrez, Mario and Kehoe, Aidan},
-title = {Could the Stylus Be Mightier Than the Controller? An Investigation Into the Heisenberg Effect of Spatial Interaction for 3D Tracked Styluses},
-year = {2026},
-isbn = {9798400713941},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3772363.3798375},
-doi = {10.1145/3772363.3798375},
-abstract = {Recent advancements in extended reality have enabled new peripheral types beyond standard controllers. Devices such as 3D-tracked styluses emulate the feel of traditional pens, offering a more familiar interaction style and higher precision. However, these spatial input devices are susceptible to the Heisenberg Effect of Spatial Interaction, where involuntary cursor movement is caused by the physical act of selection (e.g., button pressing), reducing selection accuracy. We present an exploratory investigation into the Heisenberg Effect using a 3D-tracked stylus (Logitech MX Ink) and a standard controller (Meta Quest Touch Plus). Through selection tasks across varying target widths, amplitudes, and actuation fingers, results indicate that styluses are less susceptible to the Heisenberg Effect than controllers. However, choice of actuation finger matters: thumb-based input produces significantly more unintended movement than index. We present these findings to open a discussion on the future of XR peripheral design to enable both fast and precise input.},
-booktitle = {Extended Abstracts of the CHI Conference on Human Factors in Computing Systems},
-articleno = {205},
-numpages = {7},
-keywords = {Mid-Air Gestures, Area Cursors, Touchless Interaction, Touchless Widgets, Control Display Gain},
-location = {
-},
-series = {CHI EA '26}
-}">
-                <h3>Could the Stylus Be Mightier Than the Controller? An Investigation Into the Heisenberg Effect of Spatial Interaction for 3D Tracked Styluses</h3>
-                <p class="authors">Kieran Waugh, Mario Gutierrez, and Aidan Kehoe</p>
-                <p class="conference">Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI '26), 2026</p>
-                <div class="card-links">
-                    <a href="Uploads/Papers/Waugh et al -  Stylus CHI26.pdf" target="_blank" class="btn-link">PDF</a>
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3772363.3798375" target="_blank" class="btn-link">DOI</a>
-                    <a href="#" class="btn-link btn-cite">Cite</a>
-                    
-                </div>
-            </article>
-
-            <article class="content-card"
-                    data-cite-text="Kieran Waugh, Mark McGill, and Euan Freeman. 2025. Everything to Gain: Combining Area Cursors with increased Control-Display Gain for Fast and Accurate Touchless Input. In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25). Association for Computing Machinery, New York, NY, USA, Article 726, 1–16. https://doi.org/10.1145/3706598.3714021"
-                    data-cite-bibtex="@inproceedings{10.1145/3706598.3714021,
-author = {Waugh, Kieran and McGill, Mark and Freeman, Euan},
-title = {Everything to Gain: Combining Area Cursors with increased Control-Display Gain for Fast and Accurate Touchless Input},
-year = {2025},
-isbn = {9798400713941},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3706598.3714021},
-doi = {10.1145/3706598.3714021},
-abstract = {Touchless displays often use mid-air gestures to control on-screen cursors for pointer interactions. Area cursors can simplify touchless cursor input by implicitly targeting nearby widgets without the cursor entering the target. However, for displays with dense target layouts, the cursor still has to arrive close to the widget, meaning the benefits of area cursors for time-to-target and effort are diminished. Through two experiments, we demonstrate for the first time that fine-tuning the mapping between hand and cursor movements (control-display gain – CDG) can address the deficiencies of area cursors and improve the performance of touchless interaction. Across several display sizes and target densities (representative of myriad public displays used in retail, transport, museums, etc), our findings show that the forgiving nature of an area cursor compensates for the imprecision of a high CDG, helping users interact more effectively with smaller and more controlled hand/arm movements.},
-booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems},
-articleno = {726},
-numpages = {16},
-keywords = {Mid-Air Gestures, Area Cursors, Touchless Interaction, Touchless Widgets, Control Display Gain},
-location = {
-},
-series = {CHI '25}
-}">
-                <h3>Everything to Gain: Combining Area Cursors with increased Control-Display Gain for Fast and Accurate Touchless Input</h3>
-                <p class="authors">Kieran Waugh, Mark McGill, Euan Freeman</p>
-                <p class="conference">In CHI Conference on Human Factors in Computing Systems (CHI '25), 2025</p>
-                <div class="card-links">
-                    <a href="Uploads/Papers/Waugh et al - Everything to Gain.pdf" target="_blank" class="btn-link">PDF</a>
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3706598.3714021" target="_blank" class="btn-link">DOI</a>
-                    <a href="#" class="btn-link btn-cite">Cite</a>
-                    
-                </div>
-            </article>
-
-            <article class="content-card"
-                    data-cite-text="Kieran Waugh, Mark McGill, and Euan Freeman. 2023. Proxemic Cursor Interactions for Touchless Widget Control. In Proceedings of the 2023 ACM Symposium on Spatial User Interaction (SUI '23). Association for Computing Machinery, New York, NY, USA, Article 21, 1–12. https://doi.org/10.1145/3607822.3614525"
-                    data-cite-bibtex="@inproceedings{10.1145/3607822.3614525,
-author = {Waugh, Kieran and McGill, Mark and Freeman, Euan},
-title = {Proxemic Cursor Interactions for Touchless Widget Control},
-year = {2023},
-isbn = {9798400702815},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3607822.3614525},
-doi = {10.1145/3607822.3614525},
-abstract = {Touchless gesture interfaces often use cursor-based interactions, where widgets are targeted by a movable cursor and activated with a mid-air gesture (e.g., push or Pinch). Continuous interactions like slider manipulation can be challenging in mid-air because users need to precisely target widgets and then maintain an ‘activated’ state whilst moving the cursor. We investigated proxemic cursor interactions as a novel alternative, where cursor proximity allows users to acquire and keep control of user interface widgets without precisely targeting them. Users took advantage of proxemic targeting, though gravitated towards widgets when negotiating the boundaries between multiple elements. This allowed users to gain control more quickly than with non-proxemic behaviour, and made it easier to move between user interface elements. We find that proxemic cursor interactions can improve the usability of touchless user interfaces, especially for slider interactions, paving the way to more comfortable and efficient use of touchless displays.},
-booktitle = {Proceedings of the 2023 ACM Symposium on Spatial User Interaction},
-articleno = {21},
-numpages = {12},
-keywords = {Mid-Air Gestures, Pinch Gestures, Proxemics, Touchless Interaction, Touchless Widgets},
-location = {Sydney, NSW, Australia},
-series = {SUI '23}
-}">
-                <h3>Proxemic Cursor Interactions for Touchless Widget Control</h3>
-                <p class="authors">Kieran Waugh, Mark McGill, Euan Freeman</p>
-                <p class="conference">In ACM Symposium on Spatial User Interaction (SUI '23), 2023</p>
-                <div class="card-links">
-                    <a href="Uploads/Papers/Waugh et al proxemic-cursor-interactions.pdf" target="_blank" class="btn-link">PDF</a>
-                    <a href="https://doi.org/10.1145/3607822.3614525" target="_blank" class="btn-link">DOI</a>
-                    <a href="#" class="btn-link btn-cite">Cite</a>
-                    
-                </div>
-            </article>
-
-            <article class="content-card"
-                    data-cite-text="Kieran Waugh, Mark McGill, and Euan Freeman. 2022. Push or Pinch? Exploring Slider Control Gestures for Touchless User Interfaces. In Nordic Human-Computer Interaction Conference (NordiCHI '22). Association for Computing Machinery, New York, NY, USA, Article 37, 1–10. https://doi.org/10.1145/3546155.3546702"
-                    data-cite-bibtex="@inproceedings{10.1145/3546155.3546702,
-author = {Waugh, Kieran and McGill, Mark and Freeman, Euan},
-title = {Push or Pinch? Exploring Slider Control Gestures for Touchless User Interfaces},
-year = {2022},
-isbn = {9781450396998},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3546155.3546702},
-doi = {10.1145/3546155.3546702},
-abstract = {Touchless gesture interfaces enable user interaction without the need for direct physical contact. Recently there has been increased interest in deploying such interfaces over concerns about touchscreen sterility. Many touchless displays use gestures that mimic pointer-based interactions, with a ‘cursor’ mapped to finger position, that users activate by ‘pushing’ their finger forwards. Mid-air pushing with a virtual cursor is fine for discrete interactions like button activation; however, users have difficulty exerting control over continuous interactions like sliding and scrolling, because it is challenging to keep the hand at a consistent depth when gesturing. We investigate interaction techniques for slider control that use alternative mode switches between (un)pressed states. Our findings show that pinch gestures are preferred by most users and offer a faster alternative for acquiring control of sliders, as pinching has two clearly defined states and avoids the ambiguous use of depth for delineating input states.},
-booktitle = {Nordic Human-Computer Interaction Conference},
-articleno = {37},
-numpages = {10},
-keywords = {Touchless Interaction, Slider Control, Mid-Air Gestures},
-location = {Aarhus, Denmark},
-series = {NordiCHI '22}
-}">
-                <h3>Push or Pinch? Exploring Slider Control Gestures for Touchless User Interfaces</h3>
-                <p class="authors">Kieran Waugh, Mark McGill, Euan Freeman</p>
-                <p class="conference">In Nordic Human-Computer Interaction (NordiCHI '22), 2022</p>
-                <div class="card-links">
-                    <a href="Uploads/Papers/Waugh et al - Push or Pinch.pdf" target="_blank" class="btn-link">PDF</a>
-                    <a href="https://doi.org/10.1007/978-3-030-85607-6_46" target="_blank" class="btn-link">DOI</a>
-                    <a href="#" class="btn-link btn-cite">Cite</a>
-                    
-                </div>
-            </article>
-
-            
-
+            {% assign featured = site.data.publications | where: "featured", true %}
+            {% for pub in featured %}{% include publication-card.html pub=pub %}
+            {% endfor %}
             <div class="view-all-container">
-                <a href="publications.html" class="btn-link btn-view-all">View All Publications</a>
+                <a href="{{ '/publications.html' | relative_url }}" class="btn-link btn-view-all">View All Publications</a>
             </div>
         </section>
-         
+
         <section id="contact" class="content-section">
             <h2>Get in Touch</h2>
             <div class="content-card">
                 <p>I'm always open to discussing new research, projects, or potential jobs and collaborations. Feel free to reach out via email or connect with me on social media.</p>
-                
+
                 <ul class="contact-list">
                     <li>
                         <i class="fas fa-envelope"></i>
-                        <span><a href="mailto:website@kieranwaugh.com" target="_blank">website[at]kieranwaugh.com</a></span>
+                        <span><a href="mailto:{{ a.email }}" target="_blank">{{ a.email_display }}</a></span>
                     </li>
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Glasgow, Scotland</span>
+                        <span>{{ a.location }}</span>
                     </li>
                     <li>
                         <i class="fab fa-linkedin"></i>
-                        <span><a href="https://www.linkedin.com/in/kieranwaugh/" target="_blank">linkedin.com/in/kieranwaugh/</a></span>
+                        <span><a href="{{ a.linkedin }}" target="_blank">{{ a.linkedin_display }}</a></span>
                     </li>
                 </ul>
             </div>
-        </section>   
-        
-        
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Designed and developed myself. Hosted on <i style="font-size:18px" class="fab">&#xf09b;</i>.</p>
-            <p>&copy; 2025 Kieran Waugh. Licensed under CC BY-NC-ND 4.0.</p>
-        </div>
-    </footer>
-
-
-    <div id="cite-modal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <h3>Cite this work</h3>
-            <div class="modal-body">
-                <div class="modal-tabs">
-                    <button class="modal-tab-btn active" data-tab="plain">Plain Text</button>
-                    <button class="modal-tab-btn" data-tab="bibtex">BibTeX</button>
-                </div>
-                <div class="modal-tab-panel active" id="modal-tab-plain">
-                    <pre><code id="cite-text"></code></pre>
-                    <button class="btn-copy-cite">Copy</button>
-                </div>
-                <div class="modal-tab-panel" id="modal-tab-bibtex">
-                    <pre><code id="cite-bibtex"></code></pre>
-                    <button class="btn-copy-cite">Copy</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- <script src="script.js"></script>
-</body>
-</html> -->
-
-    <script src="script.js"></script>
-</body>
-</html>
+        </section>
