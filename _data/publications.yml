@@ -136,6 +136,23 @@
     series = {CHI '26}
 
     }
+- title: Designing efficient interaction techniques for mid-air gesture interfaces
+  authors:
+    - Kieran Waugh
+  venue: PhD Thesis- University of Glasgow
+  year: 2026
+  pdf: /Uploads/Papers/McLean et al - Social Signals.pdf
+  doi: https://doi.org/10.5525/gla.thesis.86296
+  featured: false
+  cite: Waugh, K. (2026). Designing efficient interaction techniques for mid-air
+    gesture interfaces (Doctoral dissertation, University of Glasgow).
+  bibtex: >-
+    @phdthesis{waugh2026designing,
+      title={Designing efficient interaction techniques for mid-air gesture interfaces},
+      author={Waugh, Kieran David},
+      year={2026},
+      school={University of Glasgow}
+    }
 - title: "Everything to Gain: Combining Area Cursors with increased
     Control-Display Gain for Fast and Accurate Touchless Input"
   authors:
@@ -440,20 +457,4 @@
 
     isbn = {978-3-030-85607-6}
 
-    }
-- title: Designing efficient interaction techniques for mid-air gesture interfaces
-  authors:
-    - Kieran Waugh
-  venue: PhD Thesis- University of Glasgow
-  year: 2026
-  doi: https://doi.org/10.5525/gla.thesis.86296
-  featured: false
-  cite: Waugh, K. (2026). Designing efficient interaction techniques for mid-air
-    gesture interfaces (Doctoral dissertation, University of Glasgow).
-  bibtex: >-
-    @phdthesis{waugh2026designing,
-      title={Designing efficient interaction techniques for mid-air gesture interfaces},
-      author={Waugh, Kieran David},
-      year={2026},
-      school={University of Glasgow}
     }
